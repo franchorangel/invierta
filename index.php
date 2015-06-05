@@ -1,103 +1,93 @@
 <!doctype html>
 <html>
 <head>
-    <link href="~/css/style.css" rel="stylesheet" />
-    <title>Invierta - Asesore de Inversión</title>
+  <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
+  <title>Invierta - Asesore de Inversión</title>
 </head>
 <body>
-	<header>
-        <div id="imagenes-header">
-            @{
-                if (CurrentPage.HasValue("fondoHeader")){
-                    var dynamicMediaItem = Umbraco.Media(CurrentPage.fondoHeader);
-                    <img src="@dynamicMediaItem.umbracoFile" alt="@dynamicMediaItem.Name" />
-                }
-            }    
-        </div>
-		<div id="logo">
-            @{
-                if (CurrentPage.HasValue("logo")){
-                    var dynamicMediaItem = Umbraco.Media(CurrentPage.logo);
-                    <img src="@dynamicMediaItem.umbracoFile" alt="@dynamicMediaItem.Name" />
-                }
-            }    
-        </div>
-	</header>
-    <nav id="menu">
-        <h1>INVIERTA <br />ASESORES <br />DE <br />INVERSIÓN</h1>
-        <ul>
-            <li><a href="#quienes-somos">QUIÉNES SOMOS</a></li>
-            <li><a href="#indicadores">INDICADORES</a></li>
-            <li><a href="#publicaciones">PUBLICACIONES</a></li>
-            <li><a href="#videos">VIDEOS</a></li>
-            <li><a href="#portafolio">PORTAFOLIO</a></li>
-            <li><a href="#contacto">CONTACTO</a></li>
-        </ul>
-    </nav>
-    <div id="quienes-somos">
-        <h2>QUIÉNES SOMOS</h2>
-		@Umbraco.Field("textoQuienesSomos")
+<header>
+  <div id="imagenes-header">
+    <?php //get fondo header ?>            
+      <img src="" alt="" />
+    <?php //end get ?>
+  </div>
+  <div id="logo">
+    <?php //get logo ?>
+    <img src="" alt="" />
+    <?php //end get ?>
+  </div>
+</header>
+<nav id="menu">
+  <h1>INVIERTA <br />ASESORES <br />DE <br />INVERSIÓN</h1>
+    <ul>
+      <li><a href="#quienes-somos">QUIÉNES SOMOS</a></li>
+      <li><a href="#indicadores">INDICADORES</a></li>
+      <li><a href="#publicaciones">PUBLICACIONES</a></li>
+      <li><a href="#videos">VIDEOS</a></li>
+      <li><a href="#portafolio">PORTAFOLIO</a></li>
+      <li><a href="#contacto">CONTACTO</a></li>
+    </ul>
+</nav>
+<div id="quienes-somos">
+  <h2>QUIÉNES SOMOS</h2>
+  <?php //get texto quienes somos ?>
+</div>
+<div id="indicadores">
+  <div>
+    <div id="monedas">
+      <h3>MONEDAS</h3>
+      <table>
+        <tr>
+          <td>Euro (EUR)</td>
+          <td>VALOR</td>
+        </tr>
+        <tr>
+          <td>Franco Suizo (CHF)</td>
+          <td>VALOR</td>
+        </tr>
+        <tr>
+          <td>Libra Esterlina (GBP)</td>
+          <td>VALOR</td>
+        </tr>
+      </table>
     </div>
-    <div id="indicadores">
-        <div>
-            <div id="monedas">
-                <h3>MONEDAS</h3>
-                <table>
-                    <tr>
-                        <td>Euro (EUR)</td>
-                        <td>VALOR</td>
-                    </tr>
-                    <tr>
-                        <td>Franco Suizo (CHF)</td>
-                        <td>VALOR</td>
-                    </tr>
-                    <tr>
-                        <td>Libra Esterlina (GBP)</td>
-                        <td>VALOR</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="commodities">
-                <h3>COMMODITIES</h3>
-                <table>
-                    <tr>
-                        <td>Oro</td>
-                        <td>VALOR</td>
-                    </tr>
-                    <tr>
-                        <td>Petróleo Crudo</td>
-                        <td>VALOR</td>
-                    </tr>
-                    <tr>
-                        <td>Petróleo Brent</td>
-                        <td>VALOR</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div id="bonos">
-            <h3>BONOS</h3>
-        </div>
+    <div id="commodities">
+      <h3>COMMODITIES</h3>
+        <table>
+          <tr>
+            <td>Oro</td>
+            <td>VALOR</td>
+          </tr>
+          <tr>
+            <td>Petróleo Crudo</td>
+            <td>VALOR</td>
+          </tr>
+          <tr>
+            <td>Petróleo Brent</td>
+            <td>VALOR</td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div id="publicaciones">
-        <h2>PUBLICACIONES</h2>
-        @Umbraco.Field("textoPublicaciones")
+    <div id="bonos">
+      <h3>BONOS</h3>
     </div>
-    <div id="videos">
-        <h2>VIDEOS</h2>
-        @Umbraco.Field("textoVideos")
-    </div>
-    <div id="portafolio">
-        <h2>PORTAFOLIO</h2>
-        @Umbraco.Field("textoPortafolio")
-    </div>
-	<footer>
-        @{
-            if (CurrentPage.HasValue("fondoFooter")){
-                var dynamicMediaItem = Umbraco.Media(CurrentPage.fondoFooter);
-                <img src="@dynamicMediaItem.umbracoFile" alt="@dynamicMediaItem.Name" />
-            }
-        }    
-    </footer>
+  </div>
+<div id="publicaciones">
+  <h2>PUBLICACIONES</h2>
+  <?php //get texto publicaciones ?>
+</div>
+<div id="videos">
+  <h2>VIDEOS</h2>
+  <?php //get texto videos ?>
+</div>
+<div id="portafolio">
+  <h2>PORTAFOLIO</h2>
+  <?php //get texto portafolio ?>
+</div>
+<footer>
+  <?php //get fondo footer ?>
+  <img src="" alt="" />
+</footer>
 </body>
 </html>
