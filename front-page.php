@@ -6,10 +6,8 @@
 </head>
 <body>
 <header>
-  <div id="imagenes-header">
-    <?php //get fondo header ?>            
-      <img src="" alt="" />
-    <?php //end get ?>
+  <?php if ( has_post_thumbnail() ) { $thumbnail_id = get_post_thumbnail_id(); } ?>
+  <div id="imagenes-header" style="background-image:url(<?php echo wp_get_attachment_url($thumbnail_id) ?>); background-size:cover; background-position-y:-150px;">
   </div>
   <div id="logo">
     <?php //get logo ?>
