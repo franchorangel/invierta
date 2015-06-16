@@ -2,17 +2,17 @@
 <html>
 <head>
   <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
-  <title>Invierta - Asesore de Inversión</title>
+  <title>Invierta - Asesores de Inversión</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
+<div>
 <header>
   <?php if ( has_post_thumbnail() ) { $thumbnail_id = get_post_thumbnail_id(); } ?>
   <div id="imagenes-header" style="background-image:url(<?php echo wp_get_attachment_url($thumbnail_id) ?>); background-size:cover; background-position-y:-150px;">
   </div>
-  <div id="logo">
-    <?php //get logo ?>
-    <img src="" alt="" />
-    <?php //end get ?>
+  <div id="logo-home">
+    <div class="logo"></div>
   </div>
 </header>
 <nav id="menu">
@@ -28,7 +28,7 @@
 </nav>
 <div id="quienes-somos">
   <h2>QUIÉNES SOMOS</h2>
-  <p><?php the_field('quienes_somos'); ?></p>
+  <p><?php if( get_field( 'quienes_somos' ) ) { the_field( 'quienes_somos' ); } ?></p>
 </div>
 <div id="indicadores">
   <div>
@@ -73,19 +73,31 @@
   </div>
 <div id="publicaciones">
   <h2>PUBLICACIONES</h2>
-  <p><?php the_field('publicaciones'); ?></p>
+  <p><?php if( get_field( 'publicaciones' ) ) { the_field( 'publicaciones' ); } ?></p>
+  <a href="<?php //get permalink ?>">Ver publicaciones</a>
 </div>
 <div id="videos">
   <h2>VIDEOS</h2>
-  <p><?php the_field('videos'); ?></p>
+  <p><?php if( get_field( 'videos' ) ) { the_field( 'videos' ); } ?></p>
+  <a href="<?php //get permalink ?>">Ver videos</a>
 </div>
 <div id="portafolio">
   <h2>PORTAFOLIO</h2>
-  <?php //get texto portafolio ?>
+  <p><?php if( get_field( 'potafolio' ) ) { the_field( 'portafolio' ); } ?></p>
+  <a href="<?php //get permalink ?>">Ver portafolio</a>
 </div>
-<footer>
-  <?php //get fondo footer ?>
-  <img src="" alt="" />
-</footer>
-</body>
-</html>
+<script>
+﻿$('a[href*=#]:not([href=#])').click(function () {
+if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash) ;
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+        $('html,body').animate({
+            scrollTop: target.offset().top - 20
+        }, 800);
+        return false;
+    }
+}
+});
+</script>
+<?php get_footer(); ?>

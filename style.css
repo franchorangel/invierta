@@ -59,7 +59,7 @@ p {
   font-size: 1rem; }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   margin: 40px 0;
   text-align: center; }
 
@@ -77,6 +77,11 @@ footer {
   width: 60%;
   padding: 20px 20%;
   height: 200px; }
+  footer #logo-footer {
+    width: 300px;
+    height: 100%;
+    margin: auto;
+    background: url("imagenes/logo-footer.png") center no-repeat; }
 
 header {
   position: relative;
@@ -89,14 +94,21 @@ header {
     width: 100%;
     height: 100%;
     z-index: 1; }
-  header #logo {
+  header #logo-home {
     position: absolute;
     top: 100px;
     width: 100%;
     z-index: 100;
     text-align: center; }
-    header #logo img {
-      width: 400px; }
+    header #logo-home .logo {
+      margin: auto;
+      width: 400px;
+      height: 200px;
+      background: url("imagenes/logo-home.png") center no-repeat; }
+  header #logo-header {
+    width: 100%;
+    height: 200px;
+    background: url("imagenes/logo-header.png") center no-repeat; }
 
 #menu {
   width: 150px;
@@ -123,8 +135,8 @@ header {
   top: 0;
   left: 0;
   width: 60%;
-  height: 160px;
-  padding: 220px 20%;
+  height: 100px;
+  padding: 250px 20%;
   background: rgba(60, 60, 60, 0.6);
   text-align: center; }
 
@@ -137,10 +149,10 @@ header {
     float: left;
     height: 100%; }
   #indicadores #monedas {
-    width: 100%;
+    width: 90%;
     height: 50%; }
   #indicadores #commodities {
-    width: 100%;
+    width: 90%;
     height: 50%; }
   #indicadores #bonos {
     background: #0077c1;

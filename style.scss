@@ -69,10 +69,11 @@ $anaranjado:rgb(173,83,37);
 $amarillo:rgb(255, 216, 0);
 
 $blanco:rgb(230,230,230);
+$gris_claro:rgb(150,150,150);
 $p:1rem;
 $h1:2.5rem; //Not used yet
-$h2:3.5rem;
-$h3:$h2 - 1rem;
+$h2:3.3rem;
+$h3:$h2 - 0.8rem;
 
 p{font-size:$p;}
 
@@ -100,6 +101,12 @@ footer{
     padding:20px 20%;
     height:200px;
 
+    #logo-footer{
+        width:300px;
+        height:100%;
+        margin:auto;
+        background:url('imagenes/logo-footer.png') center no-repeat;
+    }
 }
 
 header{
@@ -115,16 +122,24 @@ header{
         height:100%;
         z-index:1;
     }
-    #logo{
+    #logo-home{
         position:absolute;
         top:100px;
         width:100%;
         z-index:100;
         text-align:center;
 
-        img{
+        .logo{
+            margin:auto;
             width:400px;
+            height:200px;
+            background:url('imagenes/logo-home.png') center no-repeat;
         }
+    }
+    #logo-header{
+        width:100%;
+        height:200px;
+        background:url('imagenes/logo-header.png') center no-repeat;
     }
 }
 
@@ -162,8 +177,8 @@ header{
     top:0;
     left:0;
     width:60%;
-    height:160px;
-    padding:220px 20%;
+    height:100px;
+    padding:250px 20%;
     background:rgba(60,60,60,0.6);
     text-align:center;
 }
@@ -179,11 +194,11 @@ header{
         height:100%;
     }
     #monedas{
-        width:100%;
+        width:90%;
         height:50%;
     }
     #commodities{
-        width:100%;
+        width:90%;
         height:50%;
     }
     #bonos{
