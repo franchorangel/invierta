@@ -55,6 +55,7 @@ table {
   src: url("fonts/lato-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-light-webfont.woff2") format("woff2"), url("fonts/lato-light-webfont.woff") format("woff"), url("fonts/lato-light-webfont.ttf") format("truetype"), url("fonts/lato-light-webfont.svg#latolight") format("svg");
   font-weight: normal;
   font-style: normal; }
+/******* GENERAL *************/
 p {
   font-size: 1rem; }
 
@@ -69,66 +70,77 @@ h3 {
   margin: 40px 0; }
 
 body {
-  background: #414a50;
-  color: #e6e6e6;
-  font-family: latolight; }
+  font-family: latolight;
+  color: #e6e6e6; }
+  body > div {
+    background: #414a50; }
+  body #main {
+    background: #e6e6e6; }
 
 footer {
   width: 60%;
   padding: 20px 20%;
-  height: 200px; }
+  height: 200px;
+  background: #414a50;
+  clear: both; }
   footer #logo-footer {
     width: 300px;
     height: 100%;
     margin: auto;
     background: url("imagenes/logo-footer.png") center no-repeat; }
 
-header {
+#header-home {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   height: 600px; }
-  header #imagenes-header {
-    width: 100%;
-    height: 100%;
-    z-index: 1; }
-  header #logo-home {
-    position: absolute;
-    top: 100px;
-    width: 100%;
-    z-index: 100;
-    text-align: center; }
-    header #logo-home .logo {
-      margin: auto;
-      width: 400px;
-      height: 200px;
-      background: url("imagenes/logo-home.png") center no-repeat; }
-  header #logo-header {
-    width: 100%;
-    height: 200px;
-    background: url("imagenes/logo-header.png") center no-repeat; }
 
-#menu {
+header #imagenes-header {
+  width: 100%;
+  height: 100%;
+  z-index: 1; }
+header #logo-home {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  z-index: 100;
+  text-align: center; }
+  header #logo-home .logo {
+    margin: auto;
+    width: 400px;
+    height: 200px;
+    background: url("imagenes/logo-home.png") center no-repeat; }
+header #logo-header {
+  width: 100%;
+  height: 150px;
+  background: url("imagenes/logo-header.png") center no-repeat; }
+
+.menu {
   width: 150px;
   position: fixed;
   top: 200px;
   left: 00px;
   z-index: 1000;
   padding-left: 25px; }
-  #menu h1 {
+  .menu h1 {
     padding: 5px 0; }
-  #menu li {
+  .menu li {
     margin: 15px 0; }
-    #menu li a {
+    .menu li a {
       padding: 5px 0;
       color: white;
       text-decoration: none;
       transition: all ease 0.3s; }
-      #menu li a:hover {
+      .menu li a:hover {
         color: #ffd800; }
 
+#menu h1, #menu li a {
+  color: #414a50; }
+
+/******** END GENERAL ****************/
+/******** FRONT PAGE *****************/
 #quienes-somos {
   position: absolute;
   z-index: 50;
@@ -186,5 +198,45 @@ header {
   height: 250px;
   text-align: center;
   background: #ad5325; }
+
+/****** END FRONT PAGE *******/
+/****** PUBLICACIONES ********/
+h1.titulo-archivo {
+  margin: 0 20%;
+  padding: 30px 0;
+  color: #414a50;
+  font-size: 3rem;
+  border-top: solid 1px #414a50;
+  border-bottom: solid 1px #414a50; }
+
+#content {
+  width: 60%;
+  margin: auto;
+  color: #414a50; }
+  #content .archive-item {
+    margin-bottom: 20px; }
+  #content .item-wrapper {
+    padding: 15px 0; }
+  #content a {
+    text-decoration: none; }
+  #content h1 {
+    font-size: 2rem;
+    color: #fa9c1f;
+    margin: 10px 0;
+    font-weight: bold; }
+    #content h1:hover {
+      text-decoration: underline; }
+  #content h2 {
+    font-size: 1rem;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 10px; }
+  #content h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #414a50;
+    text-align: left; }
+  #content p {
+    font-size: 1.3rem; }
 
 /*# sourceMappingURL=style.css.map */

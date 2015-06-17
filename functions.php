@@ -1,4 +1,5 @@
 <?php
+add_theme_support('post-thumbnails');
 
 function invierta_videos_post() {
     $labels = array(

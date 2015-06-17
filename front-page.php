@@ -7,7 +7,7 @@
 </head>
 <body>
 <div>
-<header>
+<header id="header-home">
   <?php if ( has_post_thumbnail() ) { $thumbnail_id = get_post_thumbnail_id(); } ?>
   <div id="imagenes-header" style="background-image:url(<?php echo wp_get_attachment_url($thumbnail_id) ?>); background-size:cover; background-position-y:-150px;">
   </div>
@@ -15,7 +15,7 @@
     <div class="logo"></div>
   </div>
 </header>
-<nav id="menu">
+<nav id="menu-home" class="menu">
   <h1>INVIERTA <br />ASESORES <br />DE <br />INVERSIÓN</h1>
     <ul>
       <li><a href="#quienes-somos">QUIÉNES SOMOS</a></li>
@@ -74,17 +74,17 @@
 <div id="publicaciones">
   <h2>PUBLICACIONES</h2>
   <p><?php if( get_field( 'publicaciones' ) ) { the_field( 'publicaciones' ); } ?></p>
-  <a href="<?php //get permalink ?>">Ver publicaciones</a>
+  <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Ver publicaciones</a>
 </div>
 <div id="videos">
   <h2>VIDEOS</h2>
   <p><?php if( get_field( 'videos' ) ) { the_field( 'videos' ); } ?></p>
-  <a href="<?php //get permalink ?>">Ver videos</a>
+  <a href="<?php echo get_post_type_archive_link('videos'); ?>">Ver videos</a>
 </div>
 <div id="portafolio">
   <h2>PORTAFOLIO</h2>
   <p><?php if( get_field( 'potafolio' ) ) { the_field( 'portafolio' ); } ?></p>
-  <a href="<?php //get permalink ?>">Ver portafolio</a>
+  <a href="<?php echo get_post_type_archive_link('portafolio'); ?>">Ver portafolio</a>
 </div>
 <script>
 ﻿$('a[href*=#]:not([href=#])').click(function () {

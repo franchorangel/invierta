@@ -10,7 +10,7 @@
     <div id="logo-header">
     </div>
 </header>
-<nav id="menu">
+<nav class="menu" id="menu">
   <h1>INVIERTA <br />ASESORES <br />DE <br />INVERSIÓN</h1>
     <ul>
       <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">QUIÉNES SOMOS</a></li>
