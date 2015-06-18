@@ -16,7 +16,7 @@
       <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">QUIÉNES SOMOS</a></li>
       <li><a href="<?php echo esc_url( home_url( '/#indicadores' ) ); ?>">INDICADORES</a></li>
       <li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">PUBLICACIONES</a></li>
-      <li><a href="<?php echo get_post_type_archive_link('videos'); ?>">VIDEOS</a></li>
+      <li><a href="<?php echo get_post_type_archive_link('videos'); ?>">TUTORIALES</a></li>
       <li><a href="<?php echo get_post_type_archive_link('portafolio'); ?>">PORTAFOLIO</a></li>
       <li><a href="#">CONTACTO</a></li>
     </ul>

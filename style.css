@@ -121,7 +121,7 @@ header #logo-header {
   width: 150px;
   position: fixed;
   top: 200px;
-  left: 00px;
+  left: 0;
   z-index: 1000;
   padding-left: 25px; }
   .menu h1 {
@@ -134,10 +134,12 @@ header #logo-header {
       text-decoration: none;
       transition: all ease 0.3s; }
       .menu li a:hover {
-        color: #ffd800; }
+        color: #fa9c1f; }
 
 #menu h1, #menu li a {
   color: #414a50; }
+#menu li a:hover {
+  color: #fa9c1f; }
 
 /******** END GENERAL ****************/
 /******** FRONT PAGE *****************/
@@ -210,9 +212,11 @@ h1.titulo-archivo {
   border-bottom: solid 1px #414a50; }
 
 #content {
+  min-height: 400px;
   width: 60%;
   margin: auto;
-  color: #414a50; }
+  color: #414a50;
+  padding-top: 30px; }
   #content .archive-item {
     margin-bottom: 20px; }
   #content .item-wrapper {
@@ -226,11 +230,6 @@ h1.titulo-archivo {
     font-weight: bold; }
     #content h1:hover {
       text-decoration: underline; }
-  #content h2 {
-    font-size: 1rem;
-    text-align: left;
-    margin-top: 30px;
-    margin-bottom: 10px; }
   #content h3 {
     font-size: 1rem;
     margin: 0;

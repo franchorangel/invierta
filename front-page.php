@@ -21,7 +21,7 @@
       <li><a href="#quienes-somos">QUIÉNES SOMOS</a></li>
       <li><a href="#indicadores">INDICADORES</a></li>
       <li><a href="#publicaciones">PUBLICACIONES</a></li>
-      <li><a href="#videos">VIDEOS</a></li>
+      <li><a href="#videos">TUTORIALES</a></li>
       <li><a href="#portafolio">PORTAFOLIO</a></li>
       <li><a href="#contacto">CONTACTO</a></li>
     </ul>

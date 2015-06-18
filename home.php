@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <h1 class="titulo-archivo">PUBLICACIONES</h1>
 <div id="content">
-<h2>ÚLTIMA PUBLICACIONES</h2>
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="archive-item">
       <?php if ( has_post_thumbnail() ) : ?>

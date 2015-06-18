@@ -70,7 +70,6 @@ $gris_claro:rgb(130,148,160);
 $azul:rgb(0,119,193);
 $anaranjado:rgb(173,83,37);
 $anaranjado_claro:rgb(250,156,31);
-$amarillo:rgb(255, 216, 0);
 
 $blanco:rgb(230,230,230);
 $p:1rem;
@@ -163,7 +162,7 @@ header{
     width:150px;
     position:fixed;
     top:200px;
-    left:00px;
+    left:0;
     z-index:1000;
     padding-left:25px;
 
@@ -181,7 +180,7 @@ header{
             transition:all ease 0.3s;
 
             &:hover{
-                color:$amarillo;
+                color:$anaranjado_claro;
             }
         }    
     }
@@ -189,6 +188,8 @@ header{
 
 #menu{
     h1, li a{color:$gris;}
+
+    li a:hover{color:$anaranjado_claro;}
 }
 
 /******** END GENERAL ****************/
@@ -279,9 +280,11 @@ h1.titulo-archivo{
 }
 
 #content{
+    min-height:400px;
     width:60%;
     margin:auto;
     color:$gris;
+    padding-top:30px;
 
     .archive-item{
         margin-bottom:20px;
@@ -303,13 +306,6 @@ h1.titulo-archivo{
         font-weight:bold;
 
         &:hover{text-decoration:underline;}
-    }
-
-    h2{
-        font-size:1rem;
-        text-align:left;
-        margin-top:30px;
-        margin-bottom:10px;
     }
 
     h3{

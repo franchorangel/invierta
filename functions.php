@@ -18,10 +18,10 @@ function invierta_videos_post() {
 }
 add_action( 'init', 'invierta_videos_post' );
 
-function invierta_publicaciones_post() {
+function invierta_portafolio_post() {
     $labels = array(
-        'name' => 'Publicaciones',
-        'singular_name' => 'Publicación',
+        'name' => 'Portafolio',
+        'singular_name' => 'Portafolio',
     );
 
     $args = array(
@@ -31,8 +31,8 @@ function invierta_publicaciones_post() {
         'has_archive' => true,
     );
 
-    register_post_type( 'publicaciones', $args );
+    register_post_type( 'portafolio', $args );
 }
-add_action( 'init', 'invierta_publicaciones_post' );
+add_action( 'init', 'invierta_portafolio_post' );
 
 ?>
