@@ -228,8 +228,8 @@ h1.titulo-archivo {
     color: #fa9c1f;
     margin: 10px 0;
     font-weight: bold; }
-    #content h1:hover {
-      text-decoration: underline; }
+  #content h1.titulo-publicaciones:hover {
+    text-decoration: underline; }
   #content h3 {
     font-size: 1rem;
     margin: 0;

@@ -30,6 +30,19 @@
   <h2>QUIÉNES SOMOS</h2>
   <p><?php if( get_field( 'quienes_somos' ) ) { the_field( 'quienes_somos' ); } ?></p>
 </div>
+<?php
+    //get timestamp of last update
+    //if (timestamp > 10min)
+    //  run get script
+    //  check validity
+    //  if cant get value set NULL in db
+    //      print 'No disponible'
+    //      send email
+    //else 
+    // retrieve values from database
+    //
+    //PRINT to screen
+?>
 <div id="indicadores">
   <div>
     <div id="monedas">

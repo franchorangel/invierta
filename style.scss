@@ -304,9 +304,9 @@ h1.titulo-archivo{
         color:$anaranjado_claro;
         margin:10px 0;
         font-weight:bold;
-
-        &:hover{text-decoration:underline;}
     }
+
+    h1.titulo-publicaciones:hover{text-decoration:underline;}
 
     h3{
         font-size:1rem;

@@ -16,7 +16,7 @@
       <?php endif; ?>
       <div class="item-wrapper">
           <h3><?php echo get_the_date(); ?></h3>
-          <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>   
+          <a href="<?php the_permalink(); ?>"><h1 class="titulo-publicaciones"><?php the_title(); ?></h1></a>   
           <p><?php the_excerpt(); ?></p>
       </div>
     </div>
