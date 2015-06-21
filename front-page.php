@@ -31,6 +31,17 @@
   <p><?php if( get_field( 'quienes_somos' ) ) { the_field( 'quienes_somos' ); } ?></p>
 </div>
 <?php
+    $db_con = new mysqli("localhost", "root", "124592159rM");
+    $db_con->query("INSERT INTO wordpress351.indicadores_tiempo (updated) VALUES (NOW())");
+    if($db_con){
+        echo 'Connected';
+    }
+    else{
+        echo 'Failed connection';
+    }
+
+    $db_con->close();
+
     //get timestamp of last update
     //if (timestamp > 10min)
     //  run get script
