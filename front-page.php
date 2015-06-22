@@ -31,12 +31,51 @@
   <p><?php if( get_field( 'quienes_somos' ) ) { the_field( 'quienes_somos' ); } ?></p>
 </div>
 <?php
+    date_default_timezone_set("America/Caracas"); //buscar como hacerlo permanente pq agrega 15% de scripting time
     $db_con = new mysqli("localhost", "root", "124592159rM");
-    $db_con->query("INSERT INTO wordpress351.indicadores_tiempo (updated) VALUES (NOW())");
-    if($db_con){
-        echo 'Connected';
+    //Oficina 
+    //$db_con->query("INSERT INTO wordpress351.indicadores_tiempo (updated) VALUES (NOW())");
+    
+    //Casa
+    $db_con->query("INSERT INTO wordpress86.indicadores_tiempo (updated) VALUES (NOW())");
+    
+    $last_updated = $db_con->query("SELECT tiempo_updated FROM wordpress86.indicadores_tiempo ORDER BY tiempo_id DESC LIMIT 1");
+    if($db_con)
+    {
+        while($row = mysqli_fetch_array($last_updated)){
+            $date = $row[0];
+        }
+
+        $php_date = strtotime($date);
+        echo date("Y-m-d H:i:s", time());
+        //echo 600 * mt_rand(8333, 12788 ) / 10000;
+        $diff = time() - $php_date;
+        if($diff > ( 600 * ( mt_rand(8333, 12788 ) / 10000 ) )){
+            //scrape and save to db
+            echo '<br />Han pasado mas de 10 minutos';
+
+            $db_con->query("INSERT INTO wordpress86.indicadores_tiempo (tiempo_updated) VALUES (NOW())"); //Set last update
+        }
+        else{
+            //get records from database
+            $query_valores_monedas = $db_con->query("SELECT monedas_valor FROM wordpress86.indicadores_monedas");
+            $valores_monedas = array();
+            $index = 0;            
+
+            while($row = mysqli_fetch_array($query_valores_monedas)){
+                $valores_monedas[$index] = $row;
+                $index++;
+            }
+
+            echo $valores_monedas[0][0];
+            echo $valores_monedas[1][0];
+            echo $valores_monedas[2][0];
+
+            echo '<br />No han pasado 10 minutos todavia';
+        }
     }
-    else{
+    else
+    {
         echo 'Failed connection';
     }
 
