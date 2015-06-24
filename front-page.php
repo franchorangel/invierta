@@ -33,14 +33,8 @@
 <?php
     date_default_timezone_set("America/Caracas"); //buscar como hacerlo permanente pq agrega 15% de scripting time
     //ini_set('display_errors', 'Off'); //colocar en el ini file de php
-
     $db_con = new mysqli("localhost", "root", "124592159rM");
-    //Oficina 
-    //$db_con->query("INSERT INTO wordpress351.indicadores_tiempo (tiempo_updated) VALUES (NOW())");
-    
-    //Casa
-    //$db_con->query("INSERT INTO wordpress86.indicadores_tiempo (tiempo_updated) VALUES (NOW())");
-    
+
     $last_updated = $db_con->query("SELECT tiempo_updated FROM wordpress351.indicadores_tiempo ORDER BY tiempo_id DESC LIMIT 1");
     if($db_con)
     {
@@ -53,96 +47,7 @@
         $php_date = strtotime($date);
         $diff = time() - $php_date;
         if($diff > ( 600 * ( mt_rand(8333, 12788 ) / 10000 ) )){
-            //$url_commodities = 'http://www.msn.com/en-us/money/markets/commodities';
-
-            //$ch = curl_init($url_commodities);
-            //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-            //curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36');
-            //$page_commodities = curl_exec($ch);
-            ////$info = curl_getinfo($ch);
-            //curl_close($ch);
-            ////echo $info['http_code'];
-            ////echo $pagec;
-
-            //$dom = new DOMDocument();
-            //$dom->loadHTML($page_commodities);
-
-            //$xpath = new DOMXPath($dom);
-            //$gold = $xpath->query('//*[@id="metal"]/div/div/div/ul[2]/a/li[2]/span'); //MSN money commodities
-            //$crude_oil = $xpath->query('//*[@id="energy"]/div/div/div/ul[2]/a/li[2]/span'); // MSN money commodities
-            //$brent_crude = $xpath->query('//*[@id="energy"]/div/div/div/ul[3]/a/li[2]/span'); // MSN money commodities
-
-            //$gold->item(0)->nodeValue;
-            //$crude_oil->item(0)->nodeValue;
-            //$brent_crude->item(0)->nodeValue;
-            ////save to db
-
-
-
-            //$url_monedas = 'http://www.xe.com/sitemap.php';
-            //
-            //$ch = curl_init($url_monedas);
-            //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-            //curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36');
-            //$page_monedas = curl_exec($ch);
-            //$info = curl_getinfo($ch);
-            //curl_close($ch);
-            //echo $info['http_code'];
-            //echo $page_monedas;
-
-            //$dom = new DOMDocument();
-            //$dom->loadHTML($page_monedas);
-
-            //$xpath = new DOMXPath($dom);
-            //$euro = $xpath->query('//*[@id="crLive"]/tbody/tr[2]/td[2]'); //
-            ////$libra = $xpath->query('//*[@id="i_GBP"]'); //
-            ////$franco = $xpath->query('//*[@id="i_CHF"]'); //
-
-            //$euro->item(0)->nodeValue;
-            ////$libra->item(0)->nodeValue;
-            ////$franco->item(0)->nodeValue;
-
-            //echo $euro;
-            ////echo $libra;
-            ////echo $franco;
-
-            ////scrape and save to db
-            //echo '<br />Han pasado mas de 10 minutos';
-
-            //$db_con->query("INSERT INTO wordpress351.indicadores_tiempo (tiempo_updated) VALUES (NOW())"); //Set last update
-
-            //$url_bonos = 'http://www.bonosvenezolanos.net/bonos/cotizacion_hoy';
-            $page_bonos = 'bonos.html'; //Local
-            
-            $ch = curl_init($url_bonos);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36');
-            //$page_bonos = curl_exec($ch);
-            //$info = curl_getinfo($ch);
-            curl_close($ch);
-            //echo $info['http_code'];
-            //echo $page_bonos;
-
-            $dom = new DOMDocument();
-            $dom->loadHTMLFile($page_bonos); //remove file part on internet
-
-            $nodeList = $dom->getElementsByTagName('td');
-            $array = iterator_to_array($nodeList);
-
-            $n=0;
-            foreach($array as $key => $item){
-              if(is_string($item->nodeValue)){
-                  $array_n[$n] = $item->nodeValue;
-                  $n++;
-              }
-            }
-
-            ?>
-            
-        <?php
+            //include 'indicadores.php';
         }
         else{
             //get records from database
@@ -160,23 +65,17 @@
             $libra = $valores_monedas[2][0];
 
             echo '<br />No han pasado 10 minutos todavia';
+            $db_con->close();
         }
     }
     else
     {
         echo 'Failed connection';
+        $db_con->close();
     }
 
-    $db_con->close();
-    
-    $url = 'http://www.msn.com/en-us/money/markets/commodities';
-    //$url = 'http://www.msn.com/en-us/money/currencyconverter';
-    //$url = 'http://www.movatic.com';
-
-    
-
     //get timestamp of last update
-    //if (timestamp > 10min)
+    //if (timestamp > 60min)
     //  run get script
     //  check validity
     //  if cant get value set NULL in db
@@ -237,8 +136,8 @@
             <td>Oro</td>
             <td>
               <?php
-                  if(isset($euro)){
-                    echo $euro;     
+                  if(isset($v_gold)){
+                    echo $v_gold;     
                   }else{
                     echo 'No disponible';
                   }
@@ -249,8 +148,8 @@
             <td>Petróleo Crudo</td>
             <td>
               <?php
-                if(isset($euro)){
-                  echo $euro;     
+                if(isset($v_crude)){
+                  echo $v_crude;     
                 }else{
                   echo 'No disponible';
                 }
@@ -261,8 +160,8 @@
             <td>Petróleo Brent</td>
             <td>
               <?php
-                if(isset($euro)){
-                  echo $euro;     
+                if(isset($v_brent)){
+                  echo $v_brent;     
                 }else{
                   echo 'No disponible';
                 }
