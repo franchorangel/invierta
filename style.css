@@ -70,6 +70,7 @@ h3 {
   margin: 40px 0; }
 
 body {
+  min-width: 1200px;
   font-family: latolight;
   color: #e6e6e6; }
   body > div {
@@ -143,12 +144,36 @@ header #logo-header {
 
 /******** END GENERAL ****************/
 /******** FRONT PAGE *****************/
+.home-item {
+  width: 60%; }
+  .home-item .home-item-post {
+    background: #e6e6e6;
+    height: 240px;
+    padding: 10px 20px;
+    margin: 30px 0; }
+    .home-item .home-item-post h1 {
+      font-size: 2rem;
+      color: #fa9c1f;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #414a50; }
+    .home-item .home-item-post p {
+      color: #414a50; }
+    .home-item .home-item-post a {
+      color: #414a50; }
+  .home-item a {
+    color: #e6e6e6;
+    text-decoration: none; }
+    .home-item a:hover {
+      text-decoration: underline; }
+
 #quienes-somos {
   position: absolute;
   z-index: 50;
   top: 0;
   left: 0;
   width: 60%;
+  min-width: 700px;
   height: 100px;
   padding: 250px 20%;
   background: rgba(60, 60, 60, 0.6);
@@ -156,7 +181,10 @@ header #logo-header {
 
 #indicadores {
   width: 100%;
-  height: 1000px; }
+  height: 900px; }
+  #indicadores tr:hover {
+    background: #e6e6e6;
+    color: #414a50; }
   #indicadores div {
     width: 40%;
     padding-left: 10%;
@@ -165,13 +193,22 @@ header #logo-header {
   #indicadores #monedas {
     width: 90%;
     height: 50%; }
+    #indicadores #monedas td {
+      padding: 15px 0; }
   #indicadores #commodities {
     width: 90%;
     height: 50%; }
+    #indicadores #commodities td {
+      padding: 15px 0; }
   #indicadores #bonos {
     background: #0077c1;
     padding-left: 0;
     padding-right: 10%; }
+  #indicadores table {
+    width: 100%;
+    text-align: center; }
+  #indicadores td {
+    padding: 5px 10px; }
 
 #publicaciones {
   background: #414a50;
@@ -182,20 +219,16 @@ header #logo-header {
   background: -ms-linear-gradient(top, #414a50 0%, #0077c1 100%);
   background: linear-gradient(to bottom, #414a50 0%, #0077c1 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414a50', endColorstr='#0077c1', GradientType=0 );
-  width: 60%;
-  height: 400px;
-  padding: 220px 20%;
+  height: 500px;
+  padding: 85px 20%;
   text-align: center; }
 
 #videos {
-  width: 60%;
   padding: 20px 20%;
-  height: 600px; }
-  #videos p {
-    text-align: center; }
+  height: 600px;
+  text-align: center; }
 
 #portafolio {
-  width: 60%;
   padding: 220px 20%;
   height: 250px;
   text-align: center;

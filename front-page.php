@@ -32,7 +32,7 @@
 </div>
 <?php
     date_default_timezone_set("America/Caracas"); //buscar como hacerlo permanente pq agrega 15% de scripting time
-    //ini_set('display_errors', 'Off'); //colocar en el ini file de php
+    ini_set('display_errors', 'Off'); //colocar en el ini file de php
     $db_con = new mysqli("localhost", "root", "124592159rM");
 
     $last_updated = $db_con->query("SELECT tiempo_updated FROM wordpress351.indicadores_tiempo ORDER BY tiempo_id DESC LIMIT 1");
@@ -47,7 +47,7 @@
         $php_date = strtotime($date);
         $diff = time() - $php_date;
         if($diff > ( 600 * ( mt_rand(8333, 12788 ) / 10000 ) )){
-            //include 'indicadores.php';
+            include 'indicadores.php';
         }
         else{
             //get records from database
@@ -174,32 +174,57 @@
     <div id="bonos">
       <h3>BONOS</h3>
       <table>
-        <?php for($i = 0; $i < sizeof($array_n); $i++) : ?>
-          <tr>
-            <td>
-                <?php if(isset($array_n[$i * 4 + 0])){echo $array_n[$i * 4 + 0];} ?>
-            </td>
-            <td>
-                <?php if(isset($array_n[$i * 4 + 0])){echo $array_n[$i * 4 + 1];} ?>
-            </td>
+        <?php if ( isset($array_n) ) : ?>
+            <?php for($i = 0; $i < sizeof($array_n); $i++) : ?>
+                <?php if ( isset($array_n[$i * 4 + 0]) && isset($array_n[$i * 4 + 0]) ) : ?>
+                    <tr>
+                    <td>
+                        <?php echo $array_n[$i * 4 + 0]; ?>
+                    </td>
+                    <td>
+                        <?php echo $array_n[$i * 4 + 1]; ?>
+                    </td>
+                    </tr>
+                <?php endif; ?>
             <?php endfor; ?>
-          </tr>
+        <?php endif; ?>
       </table>
     </div>
   </div>
-<div id="publicaciones">
+<div id="publicaciones" class="home-item">
   <h2>PUBLICACIONES</h2>
   <p><?php if( get_field( 'publicaciones' ) ) { the_field( 'publicaciones' ); } ?></p>
-  <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Ver publicaciones</a>
+  <?php $query = new WP_Query( array( 'post_type' => 'post', 'showposts' => 1 ) ); ?> 
+  <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+    <div class="archive-item home-item-post">
+      <?php if ( has_post_thumbnail() ) : ?>
+          <style>
+              img {
+                  float: left;
+                  margin: 16px 0;
+                  margin-right: 20px;
+                  margin-bottom: 5px;
+              }
+          </style>
+          <?php the_post_thumbnail('medium'); ?>
+      <?php endif; ?>
+      <div class="item-wrapper">
+          <a href="<?php the_permalink(); ?>"><h1 class="titulo-publicaciones"><?php the_title(); ?></h1></a>   
+          <p><?php the_excerpt(); ?></p>
+      </div>
+    </div>
+  <?php endwhile; endif; ?>
+  <?php wp_reset_query(); ?>
+  <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Ver más publicaciones</a>
 </div>
-<div id="videos">
+<div id="videos" class="home-item">
   <h2>VIDEOS</h2>
   <p><?php if( get_field( 'videos' ) ) { the_field( 'videos' ); } ?></p>
   <a href="<?php echo get_post_type_archive_link('videos'); ?>">Ver videos</a>
 </div>
-<div id="portafolio">
+<div id="portafolio" class="home-item">
   <h2>PORTAFOLIO</h2>
-  <p><?php if( get_field( 'potafolio' ) ) { the_field( 'portafolio' ); } ?></p>
+  <p><?php if( get_field( 'portafolio' ) ) { the_field( 'portafolio' ); } ?></p>
   <a href="<?php echo get_post_type_archive_link('portafolio'); ?>">Ver portafolio</a>
 </div>
 <script>
