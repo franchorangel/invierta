@@ -152,8 +152,9 @@ header{
         }
     }
     #logo-header{
-        width:100%;
+        width:340px;
         height:150px;
+        margin:auto;
         background:url('imagenes/logo-header.png') center no-repeat;
     }
 
@@ -199,25 +200,6 @@ header{
 
 .home-item{
     width:60%;
-
-    .home-item-post{
-        background:$blanco;
-        height:240px;
-        padding:10px 20px;
-        margin:30px 0;
-
-        h1{
-            font-size:2rem;
-            color:$anaranjado_claro;
-            margin:10px 0;
-            font-weight:bold;
-            color:$gris;
-        }
-        
-        p{color:$gris;}
-
-        a{color:$gris;}
-    }
 
     a{
         color:$blanco;
@@ -276,7 +258,7 @@ header{
     }
 
     table{
-        width: 100%;
+        width: 85%;
         text-align: center;
     }
 
@@ -296,22 +278,88 @@ header{
     background: linear-gradient(to bottom, rgba(65,74,80,1) 0%, rgba(0,119,193,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414a50', endColorstr='#0077c1', GradientType=0 );
 
-    height:500px;
-    padding:85px 20%;
+    height:430px;
+    padding:65px 20%;
     text-align:center;
+
+    .home-item-post{
+        background:$blanco;
+        min-height:125px;
+        text-align:left;
+        padding:15px 42px;
+        margin:30px 0;
+        -webkit-box-shadow: 0px -4px 17px -4px rgba(0,0,0,0.7);
+        -moz-box-shadow: 0px -4px 17px -4px rgba(0,0,0,0.7);
+        box-shadow: 0px -4px 17px -4px rgba(0,0,0,0.7);
+
+        img{
+            border-radius:50%;
+        }
+
+        h1{
+            font-size:2rem;
+            color:$anaranjado_claro;
+            margin:10px 0;
+            font-weight:bold;
+            color:$gris;
+        }
+        
+        p{margin-bottom:15px;}
+        p,a{color:$gris;}
+    }
 }
 
 #videos{
     padding:20px 20%;
-    height:600px;
+    min-height:630px;
     text-align:center;
+
+    .home-item-post{
+        margin:30px auto;
+        width:60%;
+    }
+    
+    .home-video-wrapper{
+        position: relative;
+	    padding-bottom: 56.25%; /* 16:9 */
+	    padding-top: 25px;
+	    height: 0;
+
+        iframe{
+            position: absolute;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        height: 100%;
+        }
+    }
+    
+    .fill{
+        height:70px;
+    }
 }
 
 #portafolio{
-    padding:220px 20%;
-    height:250px;
+    padding:115px 20%;
+    height:300px;
     text-align:center;
     background:$anaranjado;
+
+    .portafolio-home-item{
+        height:50px;
+        margin:30px auto;
+
+        table{
+            border:1px $blanco solid;
+            width:70%;
+            margin:auto;
+            
+            td{
+                padding:5px;
+                text-align:center;
+            }
+        }
+    }
 }
 
 /****** END FRONT PAGE *******/
@@ -332,7 +380,7 @@ h1.titulo-archivo{
     width:60%;
     margin:auto;
     color:$gris;
-    padding-top:30px;
+    padding:30px 0;
 
     .archive-item{
         margin-bottom:20px;
@@ -365,5 +413,66 @@ h1.titulo-archivo{
 
     p{
         font-size:1.3rem;
+        margin-bottom:15px;
+        line-height:1.4;
+
+        strong{font-weight:800;}
     }
 }
+
+/********** VIDEOS ***************/
+
+.video-item{
+    margin-bottom:50px !important;
+}
+
+.video-wrapper{
+    position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+
+    iframe{
+        position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+    }
+}
+
+/********** VIDEOS END ***********/
+/********** PORTAFOLIO ***********/
+
+.portafolio-archive-item{
+    height:50px;
+    margin:auto;
+
+        table{
+            border:1px $gris solid;
+            width:90%;
+            margin:auto;
+            
+            td{
+                padding:5px;
+                text-align:center;
+                color:$gris;
+
+                a{color:$gris;}
+            }
+
+            tr:hover td{
+                color:$blanco;
+                background:$gris;
+            }
+
+            tr:hover a{
+                color:$blanco;
+                background:$gris;
+
+                &:hover{text-decoration:underline !important;}
+            }
+        }
+}
+
+/********** PORTAFOLIO END *******/

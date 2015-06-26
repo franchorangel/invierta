@@ -21,9 +21,9 @@
       <li><a href="#quienes-somos">QUIÉNES SOMOS</a></li>
       <li><a href="#indicadores">INDICADORES</a></li>
       <li><a href="#publicaciones">PUBLICACIONES</a></li>
-      <li><a href="#videos">TUTORIALES</a></li>
+      <li><a href="#videos">VIDEOS</a></li>
       <li><a href="#portafolio">PORTAFOLIO</a></li>
-      <li><a href="#contacto">CONTACTO</a></li>
+      <li><a href="<?php $page_contacto = get_page_by_title( 'Contacto' ); echo get_page_link($page_contacto->ID); ?>">CONTACTO</a></li>
     </ul>
 </nav>
 <div id="quienes-somos">
@@ -47,7 +47,7 @@
         $php_date = strtotime($date);
         $diff = time() - $php_date;
         if($diff > ( 600 * ( mt_rand(8333, 12788 ) / 10000 ) )){
-            include 'indicadores.php';
+            //include 'indicadores.php';
         }
         else{
             //get records from database
@@ -74,17 +74,15 @@
         $db_con->close();
     }
 
-    //get timestamp of last update
-    //if (timestamp > 60min)
-    //  run get script
-    //  check validity
-    //  if cant get value set NULL in db
-    //      print 'No disponible'
-    //      send email
-    //else 
-    // retrieve values from database
-    //
-    //PRINT to screen
+    //Hard coding here
+    $euro = '0.8949';
+    $franco = '0.9339';
+    $libra = '0.6350';
+
+    $v_gold = '1172.10';
+    $v_crude = '59.41';
+    $v_brent = '63.14';
+
 ?>
 <div id="indicadores">
   <div>
@@ -188,6 +186,163 @@
                 <?php endif; ?>
             <?php endfor; ?>
         <?php endif; ?>
+        <tbody><tr>
+                    <td>
+                        VENZ 2038 (7%)                    </td>
+                    <td>
+                        36.8780                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2016 (5,75%)                    </td>
+                    <td>
+                        82.8780                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2016 (5,125%)                    </td>
+                    <td>
+                        67.5230                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2018-2 (13,625%)                    </td>
+                    <td>
+                        68.0170                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2017 (8,5%)                    </td>
+                    <td>
+                        69.8330                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2019 (7,75%)                    </td>
+                    <td>
+                        40.5030                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2022 (12,75%)                    </td>
+                    <td>
+                        50.5010                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2022 (12,75%)                    </td>
+                    <td>
+                        48.8950                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2026 (6%)                    </td>
+                    <td>
+                        36.2110                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2024 (8,25%)                    </td>
+                    <td>
+                        38.5000                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2035 (9,75%)                    </td>
+                    <td>
+                        41.7390                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2026 (11,75%)                    </td>
+                    <td>
+                        44.6750                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2028 (9,25%)                    </td>
+                    <td>
+                        40.2350                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2034 (9,375%)                    </td>
+                    <td>
+                        40.0400                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2015 (5%)                    </td>
+                    <td>
+                        97.6560                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2018 (13,625%)                    </td>
+                    <td>
+                        73.2500                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2017 (5,25%)                    </td>
+                    <td>
+                        50.9520                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2018 (7%)                    </td>
+                    <td>
+                        46.2500                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2021 (9%)                    </td>
+                    <td>
+                        42.0780                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2020 (6%)                    </td>
+                    <td>
+                        39.2500                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2024 (6%)                    </td>
+                    <td>
+                        37.1970                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2023 (9%)                    </td>
+                    <td>
+                        40.1280                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        PDVSA 2027 (5,375%)                    </td>
+                    <td>
+                        35.2380                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2025 (7,65%)                    </td>
+                    <td>
+                        37.8780                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2027 (9,25%)                    </td>
+                    <td>
+                        44.0030                    </td>
+                    </tr>
+                                                                <tr>
+                    <td>
+                        VENZ 2031 (11,95%)                    </td>
+                    <td>
+                        44.6150                    </td>
+                    </tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </tbody>
       </table>
     </div>
   </div>
@@ -200,13 +355,20 @@
       <?php if ( has_post_thumbnail() ) : ?>
           <style>
               img {
-                  float: left;
+                  float: right;
                   margin: 16px 0;
-                  margin-right: 20px;
+                  margin-left: 20px;
                   margin-bottom: 5px;
               }
+              #publicaciones{
+                  height: 470px;
+                  padding: 65px 20%;
+              }
+              .home-item-post {
+                  min-height:180px !important;
+              }
           </style>
-          <?php the_post_thumbnail('medium'); ?>
+          <?php the_post_thumbnail('thumbnail'); ?>
       <?php endif; ?>
       <div class="item-wrapper">
           <a href="<?php the_permalink(); ?>"><h1 class="titulo-publicaciones"><?php the_title(); ?></h1></a>   
@@ -215,17 +377,39 @@
     </div>
   <?php endwhile; endif; ?>
   <?php wp_reset_query(); ?>
-  <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Ver más publicaciones</a>
+  <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">VER MÁS PUBLICACIONES</a>
 </div>
 <div id="videos" class="home-item">
   <h2>VIDEOS</h2>
   <p><?php if( get_field( 'videos' ) ) { the_field( 'videos' ); } ?></p>
-  <a href="<?php echo get_post_type_archive_link('videos'); ?>">Ver videos</a>
+  <?php $query = new WP_Query( array( 'post_type' => 'videos', 'showposts' => 1 ) ); ?> 
+  <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+    <div class="archive-item home-item-post">
+      <div class="home-video-wrapper">
+          <p><?php the_content(); ?></p>
+      </div>
+    </div>
+  <?php endwhile; endif; ?>
+  <?php wp_reset_query(); ?>
+  <a href="<?php echo get_post_type_archive_link('videos'); ?>">VER MÁS VIDEOS</a>
+  <div class="fill"></div>
 </div>
 <div id="portafolio" class="home-item">
   <h2>PORTAFOLIO</h2>
   <p><?php if( get_field( 'portafolio' ) ) { the_field( 'portafolio' ); } ?></p>
-  <a href="<?php echo get_post_type_archive_link('portafolio'); ?>">Ver portafolio</a>
+  <?php $query = new WP_Query( array( 'post_type' => 'portafolio', 'showposts' => 1 ) ); ?> 
+  <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+    <div class="portafolio-home-item">
+      <table>
+        <tr>
+          <td><?php the_title(); ?></td>
+          <td><a target="_blank" href="<?php if( get_field( 'archivo' ) ){ the_field( 'archivo' ); } ?>">Ver Archivo</a></td>
+        </tr>
+      </table>
+    </div>
+  <?php endwhile; endif; ?>
+  <?php wp_reset_query(); ?>
+  <a href="<?php echo get_post_type_archive_link('portafolio'); ?>">VER MÁS</a>
 </div>
 <script>
 ﻿$('a[href*=#]:not([href=#])').click(function () {

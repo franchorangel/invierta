@@ -64,20 +64,20 @@
 
 
 
-    //$url_bonos = 'http://www.bonosvenezolanos.net/bonos/cotizacion_hoy';
-    $page_bonos = 'bonos.html'; //Local
+    $url_bonos = 'http://www.bonosvenezolanos.net/bonos/cotizacion_hoy';
+    //$page_bonos = 'bonos.html'; //Local
             
-    //$ch = curl_init($url_bonos);
+    $ch = curl_init($url_bonos);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36');
-    //$page_bonos = curl_exec($ch);
+    $page_bonos = curl_exec($ch);
     //$info = curl_getinfo($ch);
     curl_close($ch);
     //echo $info['http_code'];
 
     $dom = new DOMDocument();
-    $dom->loadHTMLFile($page_bonos); //remove file part on internet
+    $dom->loadHTML($page_bonos); //remove file part on internet
 
     $nodeList = $dom->getElementsByTagName('td');
     $array = iterator_to_array($nodeList);

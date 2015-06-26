@@ -114,8 +114,9 @@ header #logo-home {
     height: 200px;
     background: url("imagenes/logo-home.png") center no-repeat; }
 header #logo-header {
-  width: 100%;
+  width: 340px;
   height: 150px;
+  margin: auto;
   background: url("imagenes/logo-header.png") center no-repeat; }
 
 .menu {
@@ -146,21 +147,6 @@ header #logo-header {
 /******** FRONT PAGE *****************/
 .home-item {
   width: 60%; }
-  .home-item .home-item-post {
-    background: #e6e6e6;
-    height: 240px;
-    padding: 10px 20px;
-    margin: 30px 0; }
-    .home-item .home-item-post h1 {
-      font-size: 2rem;
-      color: #fa9c1f;
-      margin: 10px 0;
-      font-weight: bold;
-      color: #414a50; }
-    .home-item .home-item-post p {
-      color: #414a50; }
-    .home-item .home-item-post a {
-      color: #414a50; }
   .home-item a {
     color: #e6e6e6;
     text-decoration: none; }
@@ -205,7 +191,7 @@ header #logo-header {
     padding-left: 0;
     padding-right: 10%; }
   #indicadores table {
-    width: 100%;
+    width: 85%;
     text-align: center; }
   #indicadores td {
     padding: 5px 10px; }
@@ -219,20 +205,68 @@ header #logo-header {
   background: -ms-linear-gradient(top, #414a50 0%, #0077c1 100%);
   background: linear-gradient(to bottom, #414a50 0%, #0077c1 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414a50', endColorstr='#0077c1', GradientType=0 );
-  height: 500px;
-  padding: 85px 20%;
+  height: 430px;
+  padding: 65px 20%;
   text-align: center; }
+  #publicaciones .home-item-post {
+    background: #e6e6e6;
+    min-height: 125px;
+    text-align: left;
+    padding: 15px 42px;
+    margin: 30px 0;
+    -webkit-box-shadow: 0px -4px 17px -4px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px -4px 17px -4px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px -4px 17px -4px rgba(0, 0, 0, 0.7); }
+    #publicaciones .home-item-post img {
+      border-radius: 50%; }
+    #publicaciones .home-item-post h1 {
+      font-size: 2rem;
+      color: #fa9c1f;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #414a50; }
+    #publicaciones .home-item-post p {
+      margin-bottom: 15px; }
+    #publicaciones .home-item-post p, #publicaciones .home-item-post a {
+      color: #414a50; }
 
 #videos {
   padding: 20px 20%;
-  height: 600px;
+  min-height: 630px;
   text-align: center; }
+  #videos .home-item-post {
+    margin: 30px auto;
+    width: 60%; }
+  #videos .home-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0; }
+    #videos .home-video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+  #videos .fill {
+    height: 70px; }
 
 #portafolio {
-  padding: 220px 20%;
-  height: 250px;
+  padding: 115px 20%;
+  height: 300px;
   text-align: center;
   background: #ad5325; }
+  #portafolio .portafolio-home-item {
+    height: 50px;
+    margin: 30px auto; }
+    #portafolio .portafolio-home-item table {
+      border: 1px #e6e6e6 solid;
+      width: 70%;
+      margin: auto; }
+      #portafolio .portafolio-home-item table td {
+        padding: 5px;
+        text-align: center; }
 
 /****** END FRONT PAGE *******/
 /****** PUBLICACIONES ********/
@@ -249,7 +283,7 @@ h1.titulo-archivo {
   width: 60%;
   margin: auto;
   color: #414a50;
-  padding-top: 30px; }
+  padding: 30px 0; }
   #content .archive-item {
     margin-bottom: 20px; }
   #content .item-wrapper {
@@ -269,6 +303,53 @@ h1.titulo-archivo {
     color: #414a50;
     text-align: left; }
   #content p {
-    font-size: 1.3rem; }
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    line-height: 1.4; }
+    #content p strong {
+      font-weight: 800; }
+
+/********** VIDEOS ***************/
+.video-item {
+  margin-bottom: 50px !important; }
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0; }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+/********** VIDEOS END ***********/
+/********** PORTAFOLIO ***********/
+.portafolio-archive-item {
+  height: 50px;
+  margin: auto; }
+  .portafolio-archive-item table {
+    border: 1px #414a50 solid;
+    width: 90%;
+    margin: auto; }
+    .portafolio-archive-item table td {
+      padding: 5px;
+      text-align: center;
+      color: #414a50; }
+      .portafolio-archive-item table td a {
+        color: #414a50; }
+    .portafolio-archive-item table tr:hover td {
+      color: #e6e6e6;
+      background: #414a50; }
+    .portafolio-archive-item table tr:hover a {
+      color: #e6e6e6;
+      background: #414a50; }
+      .portafolio-archive-item table tr:hover a:hover {
+        text-decoration: underline !important; }
+
+/********** PORTAFOLIO END *******/
 
 /*# sourceMappingURL=style.css.map */
