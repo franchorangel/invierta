@@ -74,11 +74,6 @@
         $db_con->close();
     }
 
-    //Hard coding here
-    $euro = '0.8949';
-    $franco = '0.9339';
-    $libra = '0.6350';
-
     $v_gold = '1172.10';
     $v_crude = '59.41';
     $v_brent = '63.14';
@@ -86,46 +81,40 @@
 ?>
 <div id="indicadores">
   <div>
+    <script>
+        $(window).load(function () {
+            var data;
+            $.ajax({
+                type: 'GET',
+                url: "<?php bloginfo( 'template_directory' ); ?>/monedas.php",
+                data: data,
+                dataType: 'html',
+                beforeSend: function() {
+                    $('#loader-monedas').fadeIn();
+                },
+                complete: function(){
+                    $('#loader-monedas').fadeOut();
+                },
+                success: function (data) {
+                    $('#monedas #valores-monedas').html(data);
+                }
+            });
+        });
+    </script>
     <div id="monedas">
       <h3>MONEDAS</h3>
-      <table>
-        <tr>
-          <td>Euro (EUR)</td>
-          <td>
-            <?php 
-              if(isset($euro)){
-                echo $euro;     
-              }else{
-                echo 'No disponible';
-              }
-            ?>
-          </td>
-        </tr>
-        <tr>
-          <td>Franco Suizo (CHF)</td>
-          <td>
-            <?php
-                if(isset($franco)){
-                    echo $franco;
-                }else{
-                    echo 'No disponible';
-                }
-            ?>
-          </td>
-        </tr>
-        <tr>
-          <td>Libra Esterlina (GBP)</td>
-          <td>
-            <?php
-                if(isset($libra)){
-                    echo $libra;
-                }else{
-                    echo 'No disponible';
-                }
-            ?>
-          </td>
-        </tr>
-      </table>
+      <div id="loader-monedas" class="loader">
+        <div id="bowlG">
+            <div id="bowl_ringG">
+                <div class="ball_holderG">
+                    <div class="ballG">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div id="valores-monedas">
+      </div>
     </div>
     <div id="commodities">
       <h3>COMMODITIES</h3>

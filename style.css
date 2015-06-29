@@ -166,6 +166,7 @@ header #logo-header {
   text-align: center; }
 
 #indicadores {
+  position: relative;
   width: 100%;
   height: 900px; }
   #indicadores tr:hover {
@@ -178,9 +179,14 @@ header #logo-header {
     height: 100%; }
   #indicadores #monedas {
     width: 90%;
-    height: 50%; }
+    height: 50%;
+    position: relative; }
     #indicadores #monedas td {
       padding: 15px 0; }
+    #indicadores #monedas #valores-monedas {
+      width: 90%;
+      padding: 0;
+      height: auto; }
   #indicadores #commodities {
     width: 90%;
     height: 50%; }
@@ -195,7 +201,93 @@ header #logo-header {
     text-align: center; }
   #indicadores td {
     padding: 5px 10px; }
-
+  #indicadores .loader {
+    position: absolute;
+    top: 25%;
+    width: 30%;
+    height: 30%;
+    left: 40%;
+    padding: 0;
+    display: none; }
+  #indicadores #bowlG {
+    top: 40%;
+    left: 30%;
+    position: absolute;
+    width: 40px;
+    height: 40px; }
+  #indicadores #bowl_ringG {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #FFFFFF;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%; }
+  #indicadores .ball_holderG {
+    position: absolute;
+    width: 11px;
+    height: 40px;
+    left: 15px;
+    top: 0px;
+    -moz-animation-name: ball_moveG;
+    -moz-animation-duration: 1.1s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -webkit-animation-name: ball_moveG;
+    -webkit-animation-duration: 1.1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -ms-animation-name: ball_moveG;
+    -ms-animation-duration: 1.1s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -o-animation-name: ball_moveG;
+    -o-animation-duration: 1.1s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    animation-name: ball_moveG;
+    animation-duration: 1.1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+  #indicadores .ballG {
+    position: absolute;
+    left: 0px;
+    top: -7px;
+    width: 10px;
+    height: 10px;
+    background: #FFFFFF;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%; }
+@-moz-keyframes ball_moveG {
+  0% {
+    -moz-transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes ball_moveG {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@-ms-keyframes ball_moveG {
+  0% {
+    -ms-transform: rotate(0deg); }
+  100% {
+    -ms-transform: rotate(360deg); } }
+@-o-keyframes ball_moveG {
+  0% {
+    -o-transform: rotate(0deg); }
+  100% {
+    -o-transform: rotate(360deg); } }
+@keyframes ball_moveG {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 #publicaciones {
   background: #414a50;
   background: -moz-linear-gradient(top, #414a50 0%, #0077c1 100%);
