@@ -36,16 +36,12 @@
     $db_con = new mysqli("localhost", "root", "124592159rM");
 
     $last_updated = $db_con->query("SELECT tiempo_updated FROM wordpress351.indicadores_tiempo ORDER BY tiempo_id DESC LIMIT 1");
-    if($db_con) : ?>
+    if($db_con) : 
 
-    <?php 
         while($row = mysqli_fetch_array($last_updated)){
             $date = $row[0];
         }
-    ?>
 
-        
-    <?php 
         //echo date("Y-m-d H:i:s", time());
         //echo 600 * mt_rand(8333, 12788 ) / 10000;
         $php_date = strtotime($date);
@@ -55,12 +51,11 @@
             <?php //load monedas ?>
             <script>
                 $(window).load(function () {
-                    var data;
                     $.ajax({
                         type: 'GET',
                         url: "<?php bloginfo( 'template_directory' ); ?>/monedas.php",
-                        data: data,
                         dataType: 'html',
+                        cache: false,
                         beforeSend: function() {
                             $('#loader-monedas').fadeIn();
                         },
@@ -74,8 +69,8 @@
                 });
             </script>
 
-            //include 'indicadores.php';
-    <?php else: ?>
+       <?php      //include 'indicadores.php';
+        else: 
             //get records from database
             $query_valores_monedas = $db_con->query("SELECT monedas_valor FROM wordpress351.indicadores_monedas");
             $valores_monedas = array();
@@ -92,13 +87,12 @@
 
             echo '<br />No han pasado 10 minutos todavia';
             $db_con->close();
-        <? endif; ?>
+         endif; ?>
     <?php else: ?>
     <?php
         echo 'Failed connection';
         $db_con->close();
       endif; 
-    ?>
 
     $v_gold = '1172.10';
     $v_crude = '59.41';

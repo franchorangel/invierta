@@ -1,11 +1,10 @@
 <script>
-    var data;
+    var directory = "http://localhost:60992/wp-content/themes/invierta/"; //colocar url manual
     $.ajax({
         dataType: 'json',
         type: 'GET',
         url: 'https://openexchangerates.org/api/latest.json?app_id=ee8a4a9bee01467c81152d137d57564d',
-        timeout: 10000,
-        data: data,
+        timeout: 15000,
         success: function (data) {
             var euro = parseFloat(data.rates.EUR);
             euro = 1 / euro;
@@ -19,19 +18,14 @@
             $('#libra').text(libra.toFixed(4));
             $('#monedas table').fadeIn();
 
-            var arrayMonedas = Array();
-            arrayMonedas[0] = euro;
-            arrayMonedas[1] = franco;
-            arrayMonedas[2] = libra;
-
-            var jarrayMonedas = JSON.stringify(arrayMonedas);
-
             $.ajax({
                 type: 'POST',
-                url: "<?php bloginfo('template_directory'); ?>/guardar_monedas.php",
-                data: jarrayMonedas,
-                success: function(jarrayMonedas){
-                    console.log(jarrayMonedas);
+                url: directory + "/guardar_monedas.php",
+                dataType: 'html',
+                data: { "euro": euro.toFixed(4), "franco": franco.toFixed(4), "libra": libra.toFixed(4) },
+                cache: false,
+                success: function (data) {
+                    console.log("Guardado");
                 }
             });
         },
@@ -61,3 +55,10 @@
     </td>
 </tr>
 </table>
+
+<?php
+//$db = new mysqli("localhost", "root", "124592159rM");
+
+//$db->query("UPDATE wordpress351.indicadores_monedas SET monedas_valor = " . euro.toFixed(4) . " WHERE monedas_id = 1;");
+?>
+
