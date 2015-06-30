@@ -1,11 +1,3 @@
-<?php
-
-    //json url
-    //https://openexchangerates.org/api/latest.json?app_id=ee8a4a9bee01467c81152d137d57564d
-
-    //check database before running script
-
-?>
 <script>
     var data;
     $.ajax({
@@ -26,6 +18,22 @@
             $('#franco').text(franco.toFixed(4));
             $('#libra').text(libra.toFixed(4));
             $('#monedas table').fadeIn();
+
+            var arrayMonedas = Array();
+            arrayMonedas[0] = euro;
+            arrayMonedas[1] = franco;
+            arrayMonedas[2] = libra;
+
+            var jarrayMonedas = JSON.stringify(arrayMonedas);
+
+            $.ajax({
+                type: 'POST',
+                url: "<?php bloginfo('template_directory'); ?>/guardar_monedas.php",
+                data: jarrayMonedas,
+                success: function(jarrayMonedas){
+                    console.log(jarrayMonedas);
+                }
+            });
         },
         error: function () {
             $('#euro').text('No disponible');
@@ -35,6 +43,7 @@
         }
     });
 </script>
+
 <table style="display: none; width: 100%;">
   <tr>
     <td style="font-weight: 800;">Euro <span style="color: rgb(170,170,170); font-weight: 400;">( EUR/USD )</span></td>
