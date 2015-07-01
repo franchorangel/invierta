@@ -46,7 +46,9 @@
         //echo 600 * mt_rand(8333, 12788 ) / 10000;
         $php_date = strtotime($date);
         $diff = time() - $php_date;
-        if($diff > ( 600 * ( mt_rand(8333, 12788 ) / 10000 ) )) : ?>
+        //if($diff > ( 600 * ( mt_rand(8333, 12788 ) / 10000 ) )) : 
+        if(FALSE) :
+        ?>
 
             <?php //load monedas ?>
             <script>

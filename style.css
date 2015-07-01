@@ -89,6 +89,14 @@ footer {
     height: 100%;
     margin: auto;
     background: url("imagenes/logo-footer.png") center no-repeat; }
+  footer #pagina-construccion {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 5000;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 70px;
+    font-size: 2rem; }
 
 #header-home {
   position: relative;
@@ -126,8 +134,6 @@ header #logo-header {
   left: 0;
   z-index: 1000;
   padding-left: 25px; }
-  .menu h1 {
-    padding: 5px 0; }
   .menu li {
     margin: 15px 0; }
     .menu li a {
@@ -138,7 +144,7 @@ header #logo-header {
       .menu li a:hover {
         color: #fa9c1f; }
 
-#menu h1, #menu li a {
+#menu li a {
   color: #414a50; }
 #menu li a:hover {
   color: #fa9c1f; }

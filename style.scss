@@ -119,6 +119,16 @@ footer{
         margin:auto;
         background:url('imagenes/logo-footer.png') center no-repeat;
     }
+    
+    #pagina-construccion{
+        position:fixed;
+        top:40px;
+        left:0;
+        z-index:5000;
+        background:rgba(0,0,0,0.6);
+        padding:20px 70px;
+        font-size:2rem;
+    }
 }
 
 #header-home{
@@ -168,10 +178,6 @@ header{
     z-index:1000;
     padding-left:25px;
 
-    h1{
-        padding:5px 0;
-    }
-
     li{
         margin:15px 0;
 
@@ -189,7 +195,7 @@ header{
 }
 
 #menu{
-    h1, li a{color:$gris;}
+    li a{color:$gris;}
 
     li a:hover{color:$anaranjado_claro;}
 }

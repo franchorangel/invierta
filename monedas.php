@@ -23,10 +23,7 @@
                 url: directory + "/guardar_monedas.php",
                 dataType: 'html',
                 data: { "euro": euro.toFixed(4), "franco": franco.toFixed(4), "libra": libra.toFixed(4) },
-                cache: false,
-                success: function (data) {
-                    console.log("Guardado");
-                }
+                cache: false
             });
         },
         error: function () {
@@ -55,10 +52,3 @@
     </td>
 </tr>
 </table>
-
-<?php
-//$db = new mysqli("localhost", "root", "124592159rM");
-
-//$db->query("UPDATE wordpress351.indicadores_monedas SET monedas_valor = " . euro.toFixed(4) . " WHERE monedas_id = 1;");
-?>
-
