@@ -16,14 +16,13 @@
   </div>
 </header>
 <nav id="menu-home" class="menu">
-  <h1>INVIERTA <br />ASESORES <br />DE <br />INVERSIÓN</h1>
     <ul>
-      <li><a href="#quienes-somos">QUIÉNES SOMOS</a></li>
-      <li><a href="#indicadores">INDICADORES</a></li>
-      <li><a href="#publicaciones">PUBLICACIONES</a></li>
-      <li><a href="#videos">VIDEOS</a></li>
-      <li><a href="#portafolio">PORTAFOLIO</a></li>
-      <li><a href="<?php $page_contacto = get_page_by_title( 'Contacto' ); echo get_page_link($page_contacto->ID); ?>">CONTACTO</a></li>
+        <li><a href="#quienes-somos">QUIÉNES SOMOS</a></li>
+        <li><a href="#indicadores">INDICADORES</a></li>
+        <li><a href="#publicaciones">PUBLICACIONES</a></li>
+        <li><a href="#videos">VIDEOS</a></li>
+        <li><a href="#portafolio">PORTAFOLIO</a></li>
+        <li><a href="<?php $page_contacto = get_page_by_title( 'Contacto' ); echo get_page_link($page_contacto->ID); ?>">CONTACTO</a></li>
     </ul>
 </nav>
 <div id="quienes-somos">

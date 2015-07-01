@@ -13,8 +13,8 @@
   </a>
 </header>
 <nav class="menu" id="menu">
-  <h1>INVIERTA <br />ASESORES <br />DE <br />INVERSIÓN</h1>
     <ul>
+      <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">PÁGINA PRINCIPAL</a></li>
       <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">QUIÉNES SOMOS</a></li>
       <li><a href="<?php echo esc_url( home_url( '/#indicadores' ) ); ?>">INDICADORES</a></li>
       <li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">PUBLICACIONES</a></li>
