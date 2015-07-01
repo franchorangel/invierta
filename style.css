@@ -90,6 +90,7 @@ footer {
     margin: auto;
     background: url("imagenes/logo-footer.png") center no-repeat; }
   footer #pagina-construccion {
+    display: none;
     position: fixed;
     top: 40px;
     left: 0;
@@ -118,8 +119,8 @@ header #logo-home {
   text-align: center; }
   header #logo-home .logo {
     margin: auto;
-    width: 400px;
-    height: 200px;
+    width: 500px;
+    height: 400px;
     background: url("imagenes/logo-home.png") center no-repeat; }
 header #logo-header {
   width: 340px;
@@ -128,17 +129,23 @@ header #logo-header {
   background: url("imagenes/logo-header.png") center no-repeat; }
 
 .menu {
-  width: 150px;
+  width: 100%;
   position: fixed;
-  top: 200px;
+  top: 0px;
   left: 0;
   z-index: 1000;
-  padding-left: 25px; }
+  background: rgba(0, 0, 0, 0.7);
+  background: rgba(250, 250, 250, 0.9);
+  height: 85px;
+  line-height: 85px; }
   .menu li {
-    margin: 15px 0; }
+    width: 16.5%;
+    text-align: center;
+    float: left; }
     .menu li a {
-      padding: 5px 0;
+      padding: 0;
       color: white;
+      color: black;
       text-decoration: none;
       transition: all ease 0.3s; }
       .menu li a:hover {

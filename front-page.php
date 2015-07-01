@@ -17,7 +17,7 @@
 </header>
 <nav id="menu-home" class="menu">
     <ul>
-        <li><a href="#quienes-somos">QUIÉNES SOMOS</a></li>
+        <li><a href="#quienes-somos">PÁGINA PRINCIPAL</a></li>
         <li><a href="#indicadores">INDICADORES</a></li>
         <li><a href="#publicaciones">PUBLICACIONES</a></li>
         <li><a href="#videos">VIDEOS</a></li>
@@ -26,8 +26,8 @@
     </ul>
 </nav>
 <div id="quienes-somos">
-  <h2>QUIÉNES SOMOS</h2>
-  <p><?php if( get_field( 'quienes_somos' ) ) { the_field( 'quienes_somos' ); } ?></p>
+  <!--<h2>QUIÉNES SOMOS</h2>
+  <p><?php //if( get_field( 'quienes_somos' ) ) { the_field( 'quienes_somos' ); } ?></p>-->
 </div>
 <?php
     date_default_timezone_set("America/Caracas"); //buscar como hacerlo permanente pq agrega 15% de scripting time
@@ -86,7 +86,7 @@
             $franco = $valores_monedas[1][0];
             $libra = $valores_monedas[2][0];
 
-            echo '<br />No han pasado 10 minutos todavia';
+            //echo '<br />No han pasado 10 minutos todavia';
             $db_con->close();
          endif; ?>
     <?php else: ?>

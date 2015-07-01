@@ -15,7 +15,6 @@
 <nav class="menu" id="menu">
     <ul>
       <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">PÁGINA PRINCIPAL</a></li>
-      <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">QUIÉNES SOMOS</a></li>
       <li><a href="<?php echo esc_url( home_url( '/#indicadores' ) ); ?>">INDICADORES</a></li>
       <li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">PUBLICACIONES</a></li>
       <li><a href="<?php echo get_post_type_archive_link('videos'); ?>">VIDEOS</a></li>
