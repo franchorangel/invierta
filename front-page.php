@@ -15,9 +15,15 @@
     <div class="logo"></div>
   </div>
 </header>
+<style>
+    #pagina-construccion{
+        position:fixed !important;
+        top:85px !important;
+    }
+</style>
 <nav id="menu-home" class="menu">
     <ul>
-        <li><a href="#quienes-somos">PÁGINA PRINCIPAL</a></li>
+        <!--<li><a href="#quienes-somos">PÁGINA PRINCIPAL</a></li>-->
         <li><a href="#indicadores">INDICADORES</a></li>
         <li><a href="#publicaciones">PUBLICACIONES</a></li>
         <li><a href="#videos">VIDEOS</a></li>
@@ -408,7 +414,7 @@ if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && 
     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
     if (target.length) {
         $('html,body').animate({
-            scrollTop: target.offset().top - 20
+            scrollTop: target.offset().top - 85
         }, 800);
         return false;
     }
