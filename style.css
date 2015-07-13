@@ -122,8 +122,12 @@ header #logo-home {
   header #logo-home .logo {
     margin: auto;
     width: 500px;
-    height: 400px;
+    height: 300px;
     background: url("imagenes/logo-home.png") center no-repeat; }
+  header #logo-home p {
+    padding: 0 28%;
+    line-height: 1.6;
+    font-size: 1.1rem; }
 header #logo-header {
   width: 340px;
   height: 150px;
@@ -195,7 +199,7 @@ header #logo-header {
 #indicadores {
   position: relative;
   width: 100%;
-  height: 900px; }
+  height: 850px; }
   #indicadores tr:hover {
     background: #e6e6e6;
     color: #414a50; }
@@ -210,24 +214,42 @@ header #logo-header {
     position: relative; }
     #indicadores #monedas td {
       padding: 15px 0; }
+      #indicadores #monedas td:nth-child(1) {
+        padding-left: 10%; }
+      #indicadores #monedas td:nth-child(2) {
+        padding-right: 3%; }
     #indicadores #monedas #valores-monedas {
-      width: 90%;
+      width: 100%;
       padding: 0;
       height: auto; }
   #indicadores #commodities {
     width: 90%;
-    height: 50%; }
+    height: 50%;
+    margin-top: 50px; }
+    #indicadores #commodities table {
+      width: 100%; }
     #indicadores #commodities td {
       padding: 15px 0; }
+    #indicadores #commodities td:nth-child(1) {
+      padding-left: 10%; }
   #indicadores #bonos {
     background: #0077c1;
     padding-left: 0;
     padding-right: 10%; }
+    #indicadores #bonos table {
+      margin-top: -15px; }
   #indicadores table {
-    width: 85%;
-    text-align: center; }
+    width: 95%;
+    text-align: left; }
+  #indicadores th {
+    font-weight: bold;
+    padding: 20px 0; }
+    #indicadores th:nth-child(1) {
+      padding-left: 5%; }
   #indicadores td {
-    padding: 5px 10px; }
+    padding: 15px 0; }
+    #indicadores td:nth-child(1) {
+      padding-left: 5%; }
   #indicadores .loader {
     position: absolute;
     top: 25%;
