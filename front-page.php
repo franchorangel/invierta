@@ -93,11 +93,11 @@
         $db_con->close();
       endif; 
 
-    $v_gold = '1091.80';
-    $v_crude = '49.07';
-    $v_brent = '53.79';
-    $v_cobre = '2.39';
-    $v_gas = '2.80';
+    $v_gold = '1085.30';
+    $v_crude = '45.30';
+    $v_brent = '49.65';
+    $v_cobre = '2.34';
+    $v_gas = '2.75';
 
 ?>
 <div id="indicadores">
@@ -130,23 +130,23 @@
 </tr>
 <tr>
     <td style="font-weight: 800;">Peso Argentino <span style="color: rgb(170,170,170); font-weight: 400;">( USD/ARS )</span></td>
-    <td id="pesoArgentino">9.19</td>
+    <td id="pesoArgentino">9.21</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Real Brasileño <span style="color: rgb(170,170,170); font-weight: 400;">( USD/BRL )</span></td>
-    <td id="realBrasileno">3.36</td>
+    <td id="realBrasileno">3.45</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Peso Colombiano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/COP )</span></td>
-    <td id="pesoColombiano">2848.40</td>
+    <td id="pesoColombiano">2918.00</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Peso Mexicano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/MXN )</span></td>
-    <td id="pesoMexicano">16.39</td>
+    <td id="pesoMexicano">16.17</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Sol Peruano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/PEN )</span></td>
-    <td id="solPeruano">3.18</td>
+    <td id="solPeruano">3.19</td>
 </tr>
 </tbody></table>
       </div>
@@ -229,100 +229,100 @@
         </tr>
         <tr>
             <td>ARGENTINA 2015</td>
-            <td>101,25</td>
-            <td>0,05</td>
-            <td>13.35357</td>
+            <td>101,42</td>
+            <td>0,41</td>
+            <td>12.74612</td>
             <td>03-10-2015</td>
         </tr>
         <tr>
             <td>ECUADOR 15/20 REGS</td>
-            <td>95,16</td>
-            <td>0,22</td>
-            <td>12,29000</td>
+            <td>95,05</td>
+            <td>-0,15</td>
+            <td>12,22000</td>
             <td>24-03-2020</td>
         </tr>
         <tr>
             <td>COLOMBIA 13/24</td>
-            <td>96,80</td>
-            <td>2,65</td>
-            <td>4,50253</td>
+            <td>97,90</td>
+            <td>1,36</td>
+            <td>4,34148</td>
             <td>26-02-2024</td>
         </tr>
         <tr>
             <td>COLOMBIA 04/24</td>
-            <td>126,05</td>
-            <td>1,46</td>
-            <td>4,55524</td>
+            <td>126,63</td>
+            <td>1,04</td>
+            <td>4,48245</td>
             <td>21-05-2024</td>
         </tr>
         <tr>
             <td>PERU 05/25</td>
-            <td>129,56</td>
-            <td>0,85</td>
-            <td>3.79989</td>
+            <td>129,80</td>
+            <td>0,62</td>
+            <td>3.77319</td>
             <td>21-07-2025</td>
         </tr>
         <tr>
             <td>VENEZUELA 11/26 REGS</td>
-            <td>41,30</td>
-            <td>5,38</td>
-            <td>32,50667</td>
+            <td>41,75</td>
+            <td>-0,85</td>
+            <td>32,16682</td>
             <td>21-10-2026</td>
         </tr>
         <tr>
             <td>BRAZIL 97/27</td>
-            <td>141,96</td>
-            <td>1,56</td>
-            <td>5,36101</td>
+            <td>142,39</td>
+            <td>1,02</td>
+            <td>5,31945</td>
             <td>15-05-2027</td>
         </tr>
         <tr>
             <td>VENEZUELA 97/27</td>
-            <td>40,75</td>
-            <td>4,59</td>
+            <td>41,49</td>
+            <td>-0,96</td>
             <td>26.43009</td>
             <td>15-09-2027</td>
         </tr>
         <tr>
             <td>VENEZUELA 08/28 REGS</td>
-            <td>36,35</td>
-            <td>3,08</td>
-            <td>29.11071</td>
+            <td>36,70</td>
+            <td>2,62</td>
+            <td>28.84846</td>
             <td>07-05-2028</td>
         </tr>
         <tr>
             <td>MEXICO 01/31 MTN</td>
             <td>145,95</td>
-            <td>-0,03</td>
+            <td>0,03</td>
             <td>4,35000</td>
             <td>15-08-2031</td>
         </tr>
         <tr>
             <td>MEXICO 03/33 MTN</td>
-            <td>134,00</td>
-            <td>0,37</td>
-            <td>4,75000</td>
+            <td>137,30</td>
+            <td>0,07</td>
+            <td>4,48204</td>
             <td>08-04-2033</td>
         </tr>
         <tr>
             <td>PERU 03/33</td>
-            <td>149,20</td>
-            <td>0,93</td>
-            <td>4.76370</td>
+            <td>150,23</td>
+            <td>0,88</td>
+            <td>4.69786</td>
             <td>21-11-2033</td>
         </tr>
         <tr>
             <td>BRAZIL 04/34</td>
-            <td>119,80</td>
-            <td>-0,10</td>
-            <td>6,50806</td>
+            <td>119,85</td>
+            <td>-0,64</td>
+            <td>6,50352</td>
             <td>20-01-2034</td>
         </tr>
         <tr>
             <td>ARGENTINA 2038 PAR</td>
-            <td>58,15</td>
-            <td>1,51</td>
-            <td>5,94954</td>
+            <td>58,10</td>
+            <td>1,06</td>
+            <td>5,95765</td>
             <td>31-12-2038</td>
         </tr>
       </table>
