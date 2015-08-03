@@ -240,6 +240,8 @@ header{
     a{
         color:$blanco;
         text-decoration:none;
+        clear:both;
+        display:block;
 
         &:hover{
             text-decoration:underline;
@@ -489,8 +491,8 @@ header{
     text-align:center;
 
     .home-item-post{
-        margin:30px 1%;
-        width:48%;
+        margin:30px 3%;
+        width:44%;
         float:left;
     }
     
@@ -521,7 +523,7 @@ header{
     background:$anaranjado;
 
     .portafolio-home-item{
-        height:50px;
+        height:105px;
         margin:30px auto;
 
         table{
@@ -704,8 +706,8 @@ h1.titulo-archivo{
         height:580px !important;
     }
 
-    #videos{
-        
+    #videos .home-item-post{
+       margin:20px 3%; 
     }
 }
 

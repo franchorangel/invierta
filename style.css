@@ -180,7 +180,9 @@ header #logo-header {
   width: 60%; }
   .home-item a {
     color: #e6e6e6;
-    text-decoration: none; }
+    text-decoration: none;
+    clear: both;
+    display: block; }
     .home-item a:hover {
       text-decoration: underline; }
 
@@ -377,8 +379,8 @@ header #logo-header {
   min-height: 630px;
   text-align: center; }
   #videos .home-item-post {
-    margin: 30px 1%;
-    width: 48%;
+    margin: 30px 3%;
+    width: 44%;
     float: left; }
   #videos .home-video-wrapper {
     position: relative;
@@ -401,7 +403,7 @@ header #logo-header {
   text-align: center;
   background: #ad5325; }
   #portafolio .portafolio-home-item {
-    height: 50px;
+    height: 105px;
     margin: 30px auto; }
     #portafolio .portafolio-home-item table {
       border: 1px #e6e6e6 solid;
@@ -526,7 +528,10 @@ h1.titulo-archivo {
       width: 96%; }
 
   #publicaciones {
-    height: 580px !important; } }
+    height: 580px !important; }
+
+  #videos .home-item-post {
+    margin: 20px 3%; } }
 @media (max-width: 770px) {
   .menu {
     min-width: 770px; }
