@@ -489,8 +489,9 @@ header{
     text-align:center;
 
     .home-item-post{
-        margin:30px auto;
-        width:60%;
+        margin:30px 1%;
+        width:48%;
+        float:left;
     }
     
     .home-video-wrapper{
@@ -710,6 +711,12 @@ h1.titulo-archivo{
 
 @media (max-width:770px) {
     .menu{
-        //display:none;
+        min-width:770px;
+    }
+
+    #videos .home-item-post{
+        margin:30px auto;
+        width:60%;
+        float:none;
     }
 }
