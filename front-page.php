@@ -16,12 +16,6 @@
     <p><?php if( get_field( 'quienes_somos' ) ) { the_field( 'quienes_somos' ); } ?></p>
   </div>
 </header>
-<style>
-    #pagina-construccion{
-        position:fixed !important;
-        top:85px !important;
-    }
-</style>
 <nav id="menu-home" class="menu">
     <ul>
         <!--<li><a href="#quienes-somos">PÁGINA PRINCIPAL</a></li>-->
@@ -32,10 +26,7 @@
         <li><a href="<?php $page_contacto = get_page_by_title( 'Contacto' ); echo get_page_link($page_contacto->ID); ?>">CONTACTO</a></li>
     </ul>
 </nav>
-<div id="quienes-somos">
-  <!--<h2>QUIÉNES SOMOS</h2>
-  <p><?php //if( get_field( 'quienes_somos' ) ) { the_field( 'quienes_somos' ); } ?></p>-->
-</div>
+<div id="quienes-somos"></div>
 <?php
     date_default_timezone_set("America/Caracas"); //buscar como hacerlo permanente pq agrega 15% de scripting time
     ini_set('display_errors', 'Off'); //colocar en el ini file de php
@@ -102,15 +93,15 @@
         $db_con->close();
       endif; 
 
-    $v_gold = '1105.10';
-    $v_crude = '50.71';
-    $v_brent = '56.76';
-    $v_cobre = '2.48';
+    $v_gold = '1091.80';
+    $v_crude = '49.07';
+    $v_brent = '53.79';
+    $v_cobre = '2.39';
     $v_gas = '2.80';
 
 ?>
 <div id="indicadores">
-  <div>
+  <div id="wrapper-indicadores">
     <div id="monedas">
       <h3>MONEDAS</h3>
       <!--<div id="loader-monedas" class="loader">
@@ -127,35 +118,35 @@
           <table style="width: 100%;">
   <tbody><tr>
     <td style="font-weight: 800;">Euro <span style="color: rgb(170,170,170); font-weight: 400;">( EUR/USD )</span></td>
-    <td id="euro">1.0855</td>
+    <td id="euro">1.09</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Franco Suizo <span style="color: rgb(170,170,170); font-weight: 400;">( CHF/USD )</span></td>
-    <td id="franco">1.0387</td>
+    <td id="franco">1.03</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Libra Esterlina <span style="color: rgb(170,170,170); font-weight: 400;">( GBP/USD )</span></td>
-    <td id="libra">1.5569</td>
+    <td id="libra">1.56</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Peso Argentino <span style="color: rgb(170,170,170); font-weight: 400;">( USD/ARS )</span></td>
-    <td id="pesoArgentino">9.1496</td>
+    <td id="pesoArgentino">9.19</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Real Brasileño <span style="color: rgb(170,170,170); font-weight: 400;">( USD/BRL )</span></td>
-    <td id="realBrasileno">3.2214</td>
+    <td id="realBrasileno">3.36</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Peso Colombiano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/COP )</span></td>
-    <td id="pesoColombiano">2759.5500</td>
+    <td id="pesoColombiano">2848.40</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Peso Mexicano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/MXN )</span></td>
-    <td id="pesoMexicano">15.9876</td>
+    <td id="pesoMexicano">16.39</td>
 </tr>
 <tr>
     <td style="font-weight: 800;">Sol Peruano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/PEN )</span></td>
-    <td id="solPeruano">3.1850</td>
+    <td id="solPeruano">3.18</td>
 </tr>
 </tbody></table>
       </div>
@@ -238,100 +229,100 @@
         </tr>
         <tr>
             <td>ARGENTINA 2015</td>
-            <td>101,77</td>
-            <td>0,00</td>
-            <td>8.54667</td>
+            <td>101,25</td>
+            <td>0,05</td>
+            <td>13.35357</td>
             <td>03-10-2015</td>
         </tr>
         <tr>
             <td>ECUADOR 15/20 REGS</td>
-            <td>97,12</td>
-            <td>-0,01</td>
-            <td>11,62000</td>
+            <td>95,16</td>
+            <td>0,22</td>
+            <td>12,29000</td>
             <td>24-03-2020</td>
         </tr>
         <tr>
             <td>COLOMBIA 13/24</td>
-            <td>98,75</td>
-            <td>0,96</td>
-            <td>4,21752</td>
+            <td>96,80</td>
+            <td>2,65</td>
+            <td>4,50253</td>
             <td>26-02-2024</td>
         </tr>
         <tr>
             <td>COLOMBIA 04/24</td>
-            <td>126,58</td>
-            <td>1,20</td>
-            <td>4,50025</td>
+            <td>126,05</td>
+            <td>1,46</td>
+            <td>4,55524</td>
             <td>21-05-2024</td>
         </tr>
         <tr>
             <td>PERU 05/25</td>
-            <td>130,06</td>
-            <td>0,29</td>
-            <td>3.75617</td>
+            <td>129,56</td>
+            <td>0,85</td>
+            <td>3.79989</td>
             <td>21-07-2025</td>
         </tr>
         <tr>
             <td>VENEZUELA 11/26 REGS</td>
-            <td>41,00</td>
-            <td>-0,30</td>
-            <td>32,71972</td>
+            <td>41,30</td>
+            <td>5,38</td>
+            <td>32,50667</td>
             <td>21-10-2026</td>
         </tr>
         <tr>
             <td>BRAZIL 97/27</td>
-            <td>145,59</td>
-            <td>0,89</td>
-            <td>5,03531</td>
+            <td>141,96</td>
+            <td>1,56</td>
+            <td>5,36101</td>
             <td>15-05-2027</td>
-        </tr>       
+        </tr>
         <tr>
             <td>VENEZUELA 97/27</td>
-            <td>41,90</td>
-            <td>3,34</td>
-            <td>25.70562</td>
+            <td>40,75</td>
+            <td>4,59</td>
+            <td>26.43009</td>
             <td>15-09-2027</td>
         </tr>
         <tr>
             <td>VENEZUELA 08/28 REGS</td>
-            <td>36,75</td>
-            <td>0,00</td>
-            <td>28.79448</td>
+            <td>36,35</td>
+            <td>3,08</td>
+            <td>29.11071</td>
             <td>07-05-2028</td>
         </tr>
         <tr>
-            <td>MEXICO 02/31 MTN</td>
-            <td>147,88</td>
+            <td>MEXICO 01/31 MTN</td>
+            <td>145,95</td>
             <td>-0,03</td>
-            <td>4,22000</td>
+            <td>4,35000</td>
             <td>15-08-2031</td>
         </tr>
         <tr>
             <td>MEXICO 03/33 MTN</td>
-            <td>136,94</td>
-            <td>0,42</td>
-            <td>4,51004</td>
+            <td>134,00</td>
+            <td>0,37</td>
+            <td>4,75000</td>
             <td>08-04-2033</td>
         </tr>
         <tr>
             <td>PERU 03/33</td>
-            <td>149,50</td>
-            <td>0,74</td>
-            <td>4.74827</td>
+            <td>149,20</td>
+            <td>0,93</td>
+            <td>4.76370</td>
             <td>21-11-2033</td>
         </tr>
         <tr>
             <td>BRAZIL 04/34</td>
-            <td>124,03</td>
-            <td>0,46</td>
-            <td>6,16211</td>
+            <td>119,80</td>
+            <td>-0,10</td>
+            <td>6,50806</td>
             <td>20-01-2034</td>
         </tr>
         <tr>
             <td>ARGENTINA 2038 PAR</td>
-            <td>59,15</td>
-            <td>1,44</td>
-            <td>5,82120</td>
+            <td>58,15</td>
+            <td>1,51</td>
+            <td>5,94954</td>
             <td>31-12-2038</td>
         </tr>
       </table>
@@ -373,7 +364,7 @@
 <div id="videos" class="home-item">
   <h2>VIDEOS</h2>
   <p><?php if( get_field( 'videos' ) ) { the_field( 'videos' ); } ?></p>
-  <?php $query = new WP_Query( array( 'post_type' => 'videos', 'showposts' => 1 ) ); ?> 
+  <?php $query = new WP_Query( array( 'post_type' => 'videos', 'showposts' => 4 ) ); ?> 
   <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
     <div class="archive-item home-item-post">
       <div class="home-video-wrapper">
@@ -388,17 +379,17 @@
 <div id="portafolio" class="home-item">
   <h2>PORTAFOLIO</h2>
   <p><?php if( get_field( 'portafolio' ) ) { the_field( 'portafolio' ); } ?></p>
-  <?php $query = new WP_Query( array( 'post_type' => 'portafolio', 'showposts' => 1 ) ); ?> 
-  <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+  <?php $query = new WP_Query( array( 'post_type' => 'portafolio', 'showposts' => 4 ) ); ?> 
     <div class="portafolio-home-item">
-      <table>
+    <table>
+  <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
         <tr>
           <td><?php the_title(); ?></td>
           <td><a target="_blank" href="<?php if( get_field( 'archivo' ) ){ the_field( 'archivo' ); } ?>">Ver Archivo</a></td>
         </tr>
-      </table>
-    </div>
   <?php endwhile; endif; ?>
+    </table>
+    </div>
   <?php wp_reset_query(); ?>
   <a href="<?php echo get_post_type_archive_link('portafolio'); ?>">VER MÁS</a>
 </div>
