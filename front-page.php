@@ -396,6 +396,19 @@
 <div id="redes" class="home-item">
   <h2>REDES</h2>
 
+  @InviertaFinance
+  <a class="twitter-timeline" href="https://twitter.com/InviertaFinance" data-widget-id="628233714468790272">Tweets by @InviertaFinance</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  @Inviertaworld
+  <a class="twitter-timeline" href="https://twitter.com/Inviertaworld" data-widget-id="628281784942350336">Tweets by @Inviertaworld</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  @InviertaVE
+  <a class="twitter-timeline" href="https://twitter.com/InviertaVE" data-widget-id="628283831687213056">Tweets por el @InviertaVE.</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  @InviertaSports
+  <a class="twitter-timeline" href="https://twitter.com/InviertaSports" data-widget-id="628250761949016064">Tweets by @InviertaSports</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  
 </div>
 <script>
 ﻿$('a[href*=#]:not([href=#])').click(function () {
