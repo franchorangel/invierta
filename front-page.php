@@ -393,6 +393,10 @@
   <?php wp_reset_query(); ?>
   <a href="<?php echo get_post_type_archive_link('portafolio'); ?>">VER MÁS</a>
 </div>
+<div id="redes" class="home-item">
+  <h2>REDES</h2>
+
+</div>
 <script>
 ﻿$('a[href*=#]:not([href=#])').click(function () {
 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {

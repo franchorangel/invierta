@@ -81,7 +81,6 @@ p{font-size:$p;}
 
 h2{
     font-size:$h2;
-    //letter-spacing:1px;
     margin:40px 0;
     text-align:center;
 }
@@ -652,6 +651,16 @@ h1.titulo-archivo{
 }
 
 /********** PORTAFOLIO END *******/
+/********** REDES ****************/
+
+#redes{
+    margin:auto;
+    height:300px;
+
+
+}
+
+/********** REDES END ************/
 
 @media (max-width:1200px) {
     body{
