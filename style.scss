@@ -73,7 +73,7 @@ $anaranjado_claro:rgb(250,156,31);
 
 $blanco:rgb(230,230,230);
 $p:1rem;
-$h1:2.5rem; //Not used yet
+$h1:2.5rem; 
 $h2:3.3rem;
 $h3:$h2 - 0.8rem;
 
@@ -247,6 +247,8 @@ header{
         }
     }
 }
+
+#publicaciones a{ display:inline; }
 
 #quienes-somos{
     position:absolute;
@@ -655,9 +657,19 @@ h1.titulo-archivo{
 
 #redes{
     margin:auto;
-    height:300px;
+    height:1100px;
 
+    div{
+        float:left;
+        width:50%;
+    }
 
+    iframe#twitter-widget-0, iframe#twitter-widget-1, iframe#twitter-widget-2, iframe#twitter-widget-3  {
+        width:90% !important;
+        height:400px;
+        margin:20px !important;
+        margin-top:0 !important;
+    }
 }
 
 /********** REDES END ************/
@@ -718,6 +730,24 @@ h1.titulo-archivo{
     #videos .home-item-post{
        margin:20px 3%; 
     }
+    
+    #redes{
+        margin:auto;
+        height:2200px;
+
+        div{
+            float:none;
+            width:100%;
+        }
+
+        iframe#twitter-widget-0, iframe#twitter-widget-1, iframe#twitter-widget-2, iframe#twitter-widget-3  {
+            width:70% !important;
+            height:400px;
+            margin:20px 15% !important;
+            margin-top:0 !important;
+        }
+    }
+
 }
 
 @media (max-width:770px) {
@@ -730,4 +760,5 @@ h1.titulo-archivo{
         width:60%;
         float:none;
     }
+
 }

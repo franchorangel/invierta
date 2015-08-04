@@ -186,6 +186,9 @@ header #logo-header {
     .home-item a:hover {
       text-decoration: underline; }
 
+#publicaciones a {
+  display: inline; }
+
 #quienes-somos {
   position: absolute;
   z-index: 50;
@@ -498,7 +501,15 @@ h1.titulo-archivo {
 /********** REDES ****************/
 #redes {
   margin: auto;
-  height: 300px; }
+  height: 1100px; }
+  #redes div {
+    float: left;
+    width: 50%; }
+  #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3 {
+    width: 90% !important;
+    height: 400px;
+    margin: 20px !important;
+    margin-top: 0 !important; }
 
 /********** REDES END ************/
 @media (max-width: 1200px) {
@@ -537,7 +548,19 @@ h1.titulo-archivo {
     height: 580px !important; }
 
   #videos .home-item-post {
-    margin: 20px 3%; } }
+    margin: 20px 3%; }
+
+  #redes {
+    margin: auto;
+    height: 2200px; }
+    #redes div {
+      float: none;
+      width: 100%; }
+    #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3 {
+      width: 70% !important;
+      height: 400px;
+      margin: 20px 15% !important;
+      margin-top: 0 !important; } }
 @media (max-width: 770px) {
   .menu {
     min-width: 770px; }
