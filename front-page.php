@@ -28,76 +28,24 @@
 </nav>
 <div id="quienes-somos"></div>
 <?php
-    date_default_timezone_set("America/Caracas"); //buscar como hacerlo permanente pq agrega 15% de scripting time
-    ini_set('display_errors', 'Off'); //colocar en el ini file de php
-    $db_con = new mysqli("localhost", "root", "124592159rM");
+  
+  global $wpdb;
+  $euro = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='euro' ORDER BY id DESC LIMIT 1");
+  $franco_suizo = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='franco suizo' ORDER BY id DESC LIMIT 1");
+  $libra_esterlina = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='libra esterlina' ORDER BY id DESC LIMIT 1");
+  $peso_argentino = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='peso argentino' ORDER BY id DESC LIMIT 1");
+  $real_brasileno = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='real brasileno' ORDER BY id DESC LIMIT 1");
+  $peso_colombiano = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='peso colombiano' ORDER BY id DESC LIMIT 1");
+  $peso_mexicano = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='peso mexicano' ORDER BY id DESC LIMIT 1");
+  $sol_peruano = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='sol peruano' ORDER BY id DESC LIMIT 1");
 
-    $last_updated = $db_con->query("SELECT tiempo_updated FROM wordpress351.indicadores_tiempo ORDER BY tiempo_id DESC LIMIT 1");
-    if($db_con) : 
+  $venezolano = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='petroleo venezolano' ORDER BY id DESC LIMIT 1");
+  $brent = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='petroleo brent' ORDER BY id DESC LIMIT 1");
+  $oro = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='oro' ORDER BY id DESC LIMIT 1");
+  $cobre = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='cobre' ORDER BY id DESC LIMIT 1");
+  $gas = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='gas natural' ORDER BY id DESC LIMIT 1");
 
-        while($row = mysqli_fetch_array($last_updated)){
-            $date = $row[0];
-        }
-
-        //echo date("Y-m-d H:i:s", time());
-        //echo 600 * mt_rand(8333, 12788 ) / 10000;
-        $php_date = strtotime($date);
-        $diff = time() - $php_date;
-        //if($diff > ( 600 * ( mt_rand(8333, 12788 ) / 10000 ) )) : 
-        if(TRUE) :
-        ?>
-
-            <?php //load monedas ?>
-            <!--<script>
-                $(window).load(function () {
-                    $.ajax({
-                        type: 'GET',
-                        url: "<?php bloginfo( 'template_directory' ); ?>/monedas.php",
-                        dataType: 'html',
-                        cache: false,
-                        beforeSend: function() {
-                            $('#loader-monedas').fadeIn();
-                        },
-                        complete: function(){
-                            $('#loader-monedas').fadeOut();
-                        },
-                        success: function (data) {
-                            $('#monedas #valores-monedas').html(data);
-                        }
-                    });
-                });
-            </script>-->
-
-       <?php      //include 'indicadores.php';
-        else: 
-            //get records from database
-            $query_valores_monedas = $db_con->query("SELECT monedas_valor FROM wordpress351.indicadores_monedas");
-            $valores_monedas = array();
-            $index = 0;            
-
-            while($row = mysqli_fetch_array($query_valores_monedas)){
-                $valores_monedas[$index] = $row;
-                $index++;
-            }
-
-            $euro = $valores_monedas[0][0];
-            $franco = $valores_monedas[1][0];
-            $libra = $valores_monedas[2][0];
-
-            //echo '<br />No han pasado 10 minutos todavia';
-            $db_con->close();
-         endif; ?>
-    <?php else: ?>
-    <?php
-        echo 'Failed connection';
-        $db_con->close();
-      endif; 
-
-    $v_gold = '1085.30';
-    $v_crude = '45.30';
-    $v_brent = '49.65';
-    $v_cobre = '2.34';
-    $v_gas = '2.75';
+  $argentina2015 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='argentina 2015' ORDER BY id DESC LIMIT 1");
 
 ?>
 <div id="indicadores">
@@ -116,104 +64,193 @@
       </div>-->
       <div id="valores-monedas">
           <table style="width: 100%;">
-  <tbody><tr>
-    <td style="font-weight: 800;">Euro <span style="color: rgb(170,170,170); font-weight: 400;">( EUR/USD )</span></td>
-    <td id="euro">1.09</td>
-</tr>
-<tr>
-    <td style="font-weight: 800;">Franco Suizo <span style="color: rgb(170,170,170); font-weight: 400;">( CHF/USD )</span></td>
-    <td id="franco">1.03</td>
-</tr>
-<tr>
-    <td style="font-weight: 800;">Libra Esterlina <span style="color: rgb(170,170,170); font-weight: 400;">( GBP/USD )</span></td>
-    <td id="libra">1.56</td>
-</tr>
-<tr>
-    <td style="font-weight: 800;">Peso Argentino <span style="color: rgb(170,170,170); font-weight: 400;">( USD/ARS )</span></td>
-    <td id="pesoArgentino">9.21</td>
-</tr>
-<tr>
-    <td style="font-weight: 800;">Real Brasileño <span style="color: rgb(170,170,170); font-weight: 400;">( USD/BRL )</span></td>
-    <td id="realBrasileno">3.45</td>
-</tr>
-<tr>
-    <td style="font-weight: 800;">Peso Colombiano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/COP )</span></td>
-    <td id="pesoColombiano">2918.00</td>
-</tr>
-<tr>
-    <td style="font-weight: 800;">Peso Mexicano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/MXN )</span></td>
-    <td id="pesoMexicano">16.17</td>
-</tr>
-<tr>
-    <td style="font-weight: 800;">Sol Peruano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/PEN )</span></td>
-    <td id="solPeruano">3.19</td>
-</tr>
-</tbody></table>
+            <tbody>
+              <tr>
+                <td style="font-weight: 800;">Euro <span style="color: rgb(170,170,170); font-weight: 400;">( EUR/USD )</span></td>
+                <td id="euro"><?php 
+                  if ( empty($euro) ) 
+                  { 
+                    echo 'No disponible'; 
+                  } 
+                  else 
+                  {
+                    $euro = 1 / $euro->precio;
+                    echo number_format((float)$euro, 2, ',', ''); 
+                  } ?>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: 800;">Franco Suizo <span style="color: rgb(170,170,170); font-weight: 400;">( CHF/USD )</span></td>
+                <td id="franco"><?php 
+                  if ( empty($franco_suizo) ) 
+                  { 
+                    echo 'No disponible'; 
+                  } 
+                  else 
+                  { 
+                    $franco_suizo = 1 / $franco_suizo->precio;
+                    echo number_format((float)$franco_suizo, 2, ',', ''); 
+                  } ?>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: 800;">Libra Esterlina <span style="color: rgb(170,170,170); font-weight: 400;">( GBP/USD )</span></td>
+                <td id="libra"><?php 
+                  if ( empty($libra_esterlina) ) 
+                  { 
+                    echo 'No disponible'; 
+                  } 
+                  else 
+                  {
+                    $libra_esterlina = 1 / $libra_esterlina->precio; 
+                    echo number_format((float)$libra_esterlina, 2, ',', ''); 
+                  } ?>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: 800;">Peso Argentino <span style="color: rgb(170,170,170); font-weight: 400;">( USD/ARS )</span></td>
+                <td id="pesoArgentino"><?php 
+                  if ( empty($peso_argentino) ) 
+                  { 
+                    echo 'No disponible'; 
+                  } 
+                  else 
+                  { 
+                    $peso_argentino = $peso_argentino->precio;
+                    echo number_format((float)$peso_argentino, 2, ',', ''); 
+                  } ?>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: 800;">Real Brasileño <span style="color: rgb(170,170,170); font-weight: 400;">( USD/BRL )</span></td>
+                <td id="realBrasileno"><?php 
+                  if ( empty($real_brasileno) ) 
+                  { 
+                    echo 'No disponible'; 
+                  } 
+                  else 
+                  { 
+                    $real_brasileno = $real_brasileno->precio;
+                    echo number_format((float)$real_brasileno, 2, ',', ''); 
+                  } ?>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: 800;">Peso Colombiano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/COP )</span></td>
+                <td id="pesoColombiano"><?php 
+                  if ( empty($peso_colombiano) ) 
+                  { 
+                    echo 'No disponible'; 
+                  } 
+                  else 
+                  { 
+                    $peso_colombiano = $peso_colombiano->precio;
+                    echo number_format((float)$peso_colombiano, 2, ',', ''); 
+                  } ?>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: 800;">Peso Mexicano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/MXN )</span></td>
+                <td id="pesoMexicano"><?php 
+                  if ( empty($peso_mexicano) ) 
+                  { 
+                    echo 'No disponible'; 
+                  } 
+                  else 
+                  {
+                    $peso_mexicano = $peso_mexicano->precio; 
+                    echo number_format((float)$peso_mexicano, 2, ',', ''); 
+                  } ?>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: 800;">Sol Peruano <span style="color: rgb(170,170,170); font-weight: 400;">( USD/PEN )</span></td>
+                <td id="solPeruano"><?php 
+                  if ( empty($sol_peruano) ) 
+                  { 
+                    echo 'No disponible'; 
+                  } 
+                  else 
+                  { 
+                    $sol_peruano = $sol_peruano->precio;
+                    echo number_format((float)$sol_peruano, 2, ',', ''); 
+                  } ?>
+                </td>
+              </tr>
+            </tbody>
+        </table>
       </div>
     </div>
     <div id="commodities">
       <h3>COMMODITIES</h3>
         <table>
-          <tr>
-            <td>Oro</td>
-            <td>
-              <?php
-                  if(isset($v_gold)){
-                    echo $v_gold;     
-                  }else{
-                    echo 'No disponible';
-                  }
-              ?>
-            </td>
-          </tr>
-          <tr>
-            <td>Petróleo Crudo</td>
-            <td>
-              <?php
-                if(isset($v_crude)){
-                  echo $v_crude;     
-                }else{
-                  echo 'No disponible';
-                }
-              ?>
-            </td>
-          </tr>
-          <tr>
-            <td>Petróleo Brent</td>
-            <td>
-              <?php
-                if(isset($v_brent)){
-                  echo $v_brent;     
-                }else{
-                  echo 'No disponible';
-                }
-              ?>
-            </td>
-          </tr>
-          <tr>
-            <td>Cobre</td>
-            <td>
-              <?php
-                if(isset($v_cobre)){
-                  echo $v_cobre;     
-                }else{
-                  echo 'No disponible';
-                }
-              ?>
-            </td>
-          </tr>
-          <tr>
-            <td>Gas Natural</td>
-            <td>
-              <?php
-                if(isset($v_gas)){
-                  echo $v_gas;     
-                }else{
-                  echo 'No disponible';
-                }
-              ?>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>Petróleo Venezolano</td>
+              <td><?php 
+                if ( empty($venezolano) ) 
+                { 
+                  echo 'No disponible'; 
+                } 
+                else
+                {
+                  echo number_format((float)($venezolano->precio), 2, ',', '');
+                } ?>
+              </td>
+            </tr>
+            <tr>
+              <td>Petróleo Brent</td>
+              <td><?php 
+                if ( empty($brent) ) 
+                { 
+                  echo 'No disponible'; 
+                } 
+                else 
+                {
+                  echo number_format((float)($brent->precio), 2, ',', ''); 
+                } ?>
+              </td>
+            </tr>
+            <tr>
+              <td>Oro</td>
+              <td><?php 
+                if ( empty($oro) ) 
+                { 
+                  echo 'No disponible'; 
+                } 
+                else 
+                { 
+                  echo number_format((float)($oro->precio), 2, ',', '');
+                } ?>
+              </td>
+            </tr>
+            <tr>
+              <td>Cobre</td>
+              <td><?php 
+                if ( empty($cobre) ) 
+                { 
+                  echo 'No disponible'; 
+                } 
+                else 
+                {
+                  echo number_format((float)($cobre->precio), 2, ',', ''); 
+                } ?>
+              </td>
+            </tr>
+            <tr>
+              <td>Gas Natural</td>
+              <td><?php 
+                if ( empty($gas) ) 
+                { 
+                  echo 'No disponible'; 
+                } 
+                else 
+                {
+                  echo number_format((float)($gas->precio), 2, ',', ''); 
+                } ?>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -228,11 +265,22 @@
             <th>Vencimiento</th>
         </tr>
         <tr>
-            <td>ARGENTINA 2015</td>
-            <td>101,42</td>
-            <td>0,41</td>
-            <td>12.74612</td>
-            <td>03-10-2015</td>
+          <td>ARGENTINA 2015</td>
+          <?php
+            if ( empty($argentina2015) )
+            {
+              echo '<td>No disponible</td>';
+              echo '<td>No disponible</td>';
+              echo '<td>No disponible</td>';
+            }
+            else
+            {
+              echo '<td>'.number_format((float)($argentina2015->precio), 2, ',', '').'</td>';
+              echo '<td>'.number_format((float)($argentina2015->cambio), 2, ',', '').'</td>';
+              echo '<td>'.number_format((float)($argentina2015->rendimiento), 2, ',', '').'</td>';
+            }
+          ?>
+          <td>03-10-2015</td>
         </tr>
         <tr>
             <td>ECUADOR 15/20 REGS</td>
