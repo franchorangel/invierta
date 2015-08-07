@@ -50,16 +50,43 @@
   $colombia1324 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='colombia 13/24' ORDER BY id DESC LIMIT 1");
   $colombia0424 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='colombia 04/24' ORDER BY id DESC LIMIT 1");
   $peru0525 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='peru 05/25' ORDER BY id DESC LIMIT 1");
-  $brazil9727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='brazil 97/27' ORDER BY id DESC LIMIT 1");
+  $brasil9727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='brazil 97/27' ORDER BY id DESC LIMIT 1");
   $mexico0131 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='mexico 01/31' ORDER BY id DESC LIMIT 1");
   $mexico0333 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='mexico 03/33' ORDER BY id DESC LIMIT 1");
   $peru0333 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='peru 03/33' ORDER BY id DESC LIMIT 1");
-  $brazil0434 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='brazil 04/34' ORDER BY id DESC LIMIT 1");
+  $brasil0434 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='brazil 04/34' ORDER BY id DESC LIMIT 1");
   $argentina2038 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='argentina 2038' ORDER BY id DESC LIMIT 1");
+
+  $venezuela1126 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='venezuela 11/26' ORDER BY id DESC LIMIT 1");
+  $venezuela9727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='venezuela 97/27' ORDER BY id DESC LIMIT 1");
+  $venezuela0828 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='venezuela 08/28' ORDER BY id DESC LIMIT 1");
+
+  $ultima_actualizacion = $wpdb->get_row("SELECT ultima_actualizacion FROM invierta.mv_bonos ORDER BY id DESC LIMIT 1");
+
+  function cargar_bono( $bono )
+  {
+    if ( empty($bono) )
+    {
+      echo '<td>No disponible</td>';
+      echo '<td>No disponible</td>';
+      echo '<td>No disponible</td>';
+    }
+    else
+    {
+      echo '<td>'.number_format((float)($bono->precio), 2, ',', '').'</td>';
+      echo '<td>'.number_format((float)($bono->cambio), 2, ',', '').'</td>';
+      echo '<td>'.number_format((float)($bono->rendimiento), 2, ',', '').'</td>';
+    }
+  }
 
 ?>
 <div id="indicadores">
   <div id="wrapper-indicadores">
+  <?php if ( empty($ultima_actualizacion) ) : ?>
+    <p></p>
+  <?php else: ?>
+    <p style="text-align:center;margin-top:10px;">Informacion actualizada por ultima vez el <?php echo date("d/m/Y",strtotime($ultima_actualizacion->ultima_actualizacion)).' a las '.date("g:i e", strtotime($ultima_actualizacion->ultima_actualizacion)); ?></p>
+  <?php endif; ?>
     <div id="monedas">
       <h3>MONEDAS</h3>
       <!--<div id="loader-monedas" class="loader">
@@ -276,214 +303,73 @@
         </tr>
         <tr>
           <td>ARGENTINA 2015</td>
-          <?php
-            if ( empty($argentina2015) )
-            {
-              echo '<td>No disponible</td>';
-              echo '<td>No disponible</td>';
-              echo '<td>No disponible</td>';
-            }
-            else
-            {
-              echo '<td>'.number_format((float)($argentina2015->precio), 2, ',', '').'</td>';
-              echo '<td>'.number_format((float)($argentina2015->cambio), 2, ',', '').'</td>';
-              echo '<td>'.number_format((float)($argentina2015->rendimiento), 2, ',', '').'</td>';
-            }
-          ?>
+          <?php cargar_bono($argentina2015); ?>
           <td>03-10-2015</td>
         </tr>
         <tr>
           <td>ECUADOR 15/20 REGS</td>
-          <?php
-            if ( empty($ecuador1520) )
-            {
-              echo '<td>No disponible</td>';
-              echo '<td>No disponible</td>';
-              echo '<td>No disponible</td>';
-            }
-            else
-            {
-              echo '<td>'.number_format((float)($ecuador1520->precio), 2, ',', '').'</td>';
-              echo '<td>'.number_format((float)($ecuador1520->cambio), 2, ',', '').'</td>';
-              echo '<td>'.number_format((float)($ecuador1520->rendimiento), 2, ',', '').'</td>';
-            }
-          ?>
+          <?php cargar_bono($ecuador1520); ?>
           <td>24-03-2020</td>
         </tr>
         <tr>
           <td>COLOMBIA 13/24</td>
-          <?php
-            if ( empty($colombia1324) )
-            {
-              echo '<td>No disponible</td>';
-              echo '<td>No disponible</td>';
-              echo '<td>No disponible</td>';
-            }
-            else
-            {
-              echo '<td>'.number_format((float)($colombia1324->precio), 2, ',', '').'</td>';
-              echo '<td>'.number_format((float)($colombia1324->cambio), 2, ',', '').'</td>';
-              echo '<td>'.number_format((float)($colombia1324->rendimiento), 2, ',', '').'</td>';
-            }
-          ?> 
+          <?php cargar_bono($colombia1324); ?>
           <td>26-02-2024</td>
         </tr>
         <tr>
-            <td>COLOMBIA 04/24</td>
-            <?php
-              if ( empty($colombia0424) )
-              {
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-              }
-              else
-              {
-                echo '<td>'.number_format((float)($colombia0424->precio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($colombia0424->cambio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($colombia0424->rendimiento), 2, ',', '').'</td>';
-              }
-            ?> 
-            <td>21-05-2024</td>
+          <td>COLOMBIA 04/24</td>
+          <?php cargar_bono($colombia0424); ?>
+          <td>21-05-2024</td>
         </tr>
         <tr>
-            <td>PERU 05/25</td>
-             <?php
-              if ( empty($peru0525) )
-              {
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-              }
-              else
-              {
-                echo '<td>'.number_format((float)($peru0525->precio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($peru0525->cambio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($peru0525->rendimiento), 2, ',', '').'</td>';
-              }
-            ?> 
-            <td>21-07-2025</td>
+          <td>PERU 05/25</td>
+          <?php cargar_bono($peru0525); ?>
+          <td>21-07-2025</td>
         </tr>
         <tr>
-            <td>VENEZUELA 11/26 REGS</td>
-            <td>21-10-2026</td>
+          <td>VENEZUELA 11/26 REGS</td>
+          <?php cargar_bono($venezuela1126); ?>
+          <td>21-10-2026</td>
         </tr>
         <tr>
-            <td>BRASIL 97/27</td>
-             <?php
-              if ( empty($brasil9717) )
-              {
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-              }
-              else
-              {
-                echo '<td>'.number_format((float)($brasil9727->precio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($brasil9727->cambio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($brasil9727->rendimiento), 2, ',', '').'</td>';
-              }
-            ?> 
-
-            <td>15-05-2027</td>
+          <td>BRASIL 97/27</td>
+          <?php cargar_bono($brasil9727); ?>
+          <td>15-05-2027</td>
         </tr>
         <tr>
-            <td>VENEZUELA 97/27</td>
-            <td>15-09-2027</td>
+          <td>VENEZUELA 97/27</td>
+          <?php cargar_bono($venezuela9727); ?>    
+          <td>15-09-2027</td>
         </tr>
         <tr>
-            <td>VENEZUELA 08/28 REGS</td>
-            <td>07-05-2028</td>
+          <td>VENEZUELA 08/28 REGS</td>
+          <?php cargar_bono($venezuela0828); ?>
+          <td>07-05-2028</td>
         </tr>
         <tr>
-            <td>MEXICO 01/31 MTN</td>
-             <?php
-              if ( empty($mexico0131) )
-              {
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-              }
-              else
-              {
-                echo '<td>'.number_format((float)($mexico0131->precio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($mexico0131->cambio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($mexico0131->rendimiento), 2, ',', '').'</td>';
-              }
-            ?> 
-            <td>15-08-2031</td>
+          <td>MEXICO 01/31 MTN</td>
+          <?php cargar_bono($mexico0131); ?>
+          <td>15-08-2031</td>
         </tr>
         <tr>
-            <td>MEXICO 03/33 MTN</td>
-             <?php
-              if ( empty($mexico0333) )
-              {
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-              }
-              else
-              {
-                echo '<td>'.number_format((float)($mexico0333->precio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($mexico0333->cambio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($mexico0333->rendimiento), 2, ',', '').'</td>';
-              }
-            ?> 
-            <td>08-04-2033</td>
+          <td>MEXICO 03/33 MTN</td>
+          <?php cargar_bono($mexico0333); ?>
+          <td>08-04-2033</td>
         </tr>
         <tr>
-            <td>PERU 03/33</td>
-             <?php
-              if ( empty($peru0333) )
-              {
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-              }
-              else
-              {
-                echo '<td>'.number_format((float)($peru0333->precio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($peru0333->cambio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($peru0333->rendimiento), 2, ',', '').'</td>';
-              }
-            ?> 
-            <td>21-11-2033</td>
+          <td>PERU 03/33</td>
+          <?php cargar_bono($peru0333); ?>
+          <td>21-11-2033</td>
         </tr>
         <tr>
-            <td>BRASIL 04/34</td>
-             <?php
-              if ( empty($brasil0434) )
-              {
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-              }
-              else
-              {
-                echo '<td>'.number_format((float)($brasil0434->precio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($brasil0434->cambio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($brasil0434->rendimiento), 2, ',', '').'</td>';
-              }
-            ?> 
-            <td>20-01-2034</td>
+          <td>BRASIL 04/34</td>
+          <?php cargar_bono($brasil0434); ?>
+          <td>20-01-2034</td>
         </tr>
         <tr>
-            <td>ARGENTINA 2038 PAR</td>
-            <?php
-              if ( empty($argentina2038) )
-              {
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-                echo '<td>No disponible</td>';
-              }
-              else
-              {
-                echo '<td>'.number_format((float)($argentina2038->precio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($argentina2038->cambio), 2, ',', '').'</td>';
-                echo '<td>'.number_format((float)($argentina2038->rendimiento), 2, ',', '').'</td>';
-              }
-            ?> 
-            <td>31-12-2038</td>
+          <td>ARGENTINA 2038 PAR</td>
+          <?php cargar_bono($argentina2038); ?>
+          <td>31-12-2038</td>
         </tr>
       </table>
     </div>
