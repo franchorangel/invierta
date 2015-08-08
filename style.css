@@ -421,7 +421,7 @@ h1.titulo-archivo {
   height: 1100px; }
   #redes div {
     float: left;
-    width: 44%; }
+    width: 50%; }
   #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3 {
     width: 90% !important;
     height: 400px;
