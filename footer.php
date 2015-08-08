@@ -19,8 +19,13 @@ $(document).ready(function() {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-54925436-4', 'auto');
+  ga('create', 'UA-66096644-1', 'auto');
+  
+  ga('create', 'UA-54925436-4', 'auto', {'name':'mov'});
+  
   ga('send', 'pageview');
+
+  ga('mov.send', 'pageview');
 
 </script>
 </div>
