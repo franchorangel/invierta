@@ -30,38 +30,38 @@
 <?php
   
   global $wpdb;
-  $euro = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='euro' ORDER BY id DESC LIMIT 1");
-  $franco_suizo = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='franco suizo' ORDER BY id DESC LIMIT 1");
-  $libra_esterlina = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='libra esterlina' ORDER BY id DESC LIMIT 1");
-  $peso_argentino = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='peso argentino' ORDER BY id DESC LIMIT 1");
-  $real_brasileno = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='real brasileno' ORDER BY id DESC LIMIT 1");
-  $peso_colombiano = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='peso colombiano' ORDER BY id DESC LIMIT 1");
-  $peso_mexicano = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='peso mexicano' ORDER BY id DESC LIMIT 1");
-  $sol_peruano = $wpdb->get_row("SELECT precio FROM invierta.mv_monedas WHERE nombre='sol peruano' ORDER BY id DESC LIMIT 1");
+  $euro = $wpdb->get_row("SELECT precio FROM mv_monedas WHERE nombre='euro' ORDER BY id DESC LIMIT 1");
+  $franco_suizo = $wpdb->get_row("SELECT precio FROM mv_monedas WHERE nombre='franco suizo' ORDER BY id DESC LIMIT 1");
+  $libra_esterlina = $wpdb->get_row("SELECT precio FROM mv_monedas WHERE nombre='libra esterlina' ORDER BY id DESC LIMIT 1");
+  $peso_argentino = $wpdb->get_row("SELECT precio FROM mv_monedas WHERE nombre='peso argentino' ORDER BY id DESC LIMIT 1");
+  $real_brasileno = $wpdb->get_row("SELECT precio FROM mv_monedas WHERE nombre='real brasileno' ORDER BY id DESC LIMIT 1");
+  $peso_colombiano = $wpdb->get_row("SELECT precio FROM mv_monedas WHERE nombre='peso colombiano' ORDER BY id DESC LIMIT 1");
+  $peso_mexicano = $wpdb->get_row("SELECT precio FROM mv_monedas WHERE nombre='peso mexicano' ORDER BY id DESC LIMIT 1");
+  $sol_peruano = $wpdb->get_row("SELECT precio FROM mv_monedas WHERE nombre='sol peruano' ORDER BY id DESC LIMIT 1");
 
-  $venezolano = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='petroleo venezolano' ORDER BY id DESC LIMIT 1");
-  $brent = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='petroleo brent' ORDER BY id DESC LIMIT 1");
-  $oro = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='oro' ORDER BY id DESC LIMIT 1");
-  $cobre = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='cobre' ORDER BY id DESC LIMIT 1");
-  $gas = $wpdb->get_row("SELECT precio FROM invierta.mv_commodities WHERE nombre='gas natural' ORDER BY id DESC LIMIT 1");
+  $venezolano = $wpdb->get_row("SELECT precio FROM mv_commodities WHERE nombre='petroleo venezolano' ORDER BY id DESC LIMIT 1");
+  $brent = $wpdb->get_row("SELECT precio FROM mv_commodities WHERE nombre='petroleo brent' ORDER BY id DESC LIMIT 1");
+  $oro = $wpdb->get_row("SELECT precio FROM mv_commodities WHERE nombre='oro' ORDER BY id DESC LIMIT 1");
+  $cobre = $wpdb->get_row("SELECT precio FROM mv_commodities WHERE nombre='cobre' ORDER BY id DESC LIMIT 1");
+  $gas = $wpdb->get_row("SELECT precio FROM mv_commodities WHERE nombre='gas natural' ORDER BY id DESC LIMIT 1");
 
-  $argentina2015 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='argentina 2015' ORDER BY id DESC LIMIT 1");
-  $ecuador1520 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='ecuador 15/20' ORDER BY id DESC LIMIT 1");
-  $colombia1324 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='colombia 13/24' ORDER BY id DESC LIMIT 1");
-  $colombia0424 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='colombia 04/24' ORDER BY id DESC LIMIT 1");
-  $peru0525 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='peru 05/25' ORDER BY id DESC LIMIT 1");
-  $brasil9727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='brazil 97/27' ORDER BY id DESC LIMIT 1");
-  $mexico0131 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='mexico 01/31' ORDER BY id DESC LIMIT 1");
-  $mexico0333 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='mexico 03/33' ORDER BY id DESC LIMIT 1");
-  $peru0333 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='peru 03/33' ORDER BY id DESC LIMIT 1");
-  $brasil0434 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='brazil 04/34' ORDER BY id DESC LIMIT 1");
-  $argentina2038 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='argentina 2038' ORDER BY id DESC LIMIT 1");
+  $argentina2015 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='argentina 2015' ORDER BY id DESC LIMIT 1");
+  $ecuador1520 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='ecuador 15/20' ORDER BY id DESC LIMIT 1");
+  $colombia1324 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='colombia 13/24' ORDER BY id DESC LIMIT 1");
+  $colombia0424 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='colombia 04/24' ORDER BY id DESC LIMIT 1");
+  $peru0525 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='peru 05/25' ORDER BY id DESC LIMIT 1");
+  $brasil9727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='brasil 97/27' ORDER BY id DESC LIMIT 1");
+  $mexico0131 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='mexico 01/31' ORDER BY id DESC LIMIT 1");
+  $mexico0333 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='mexico 03/33' ORDER BY id DESC LIMIT 1");
+  $peru0333 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='peru 03/33' ORDER BY id DESC LIMIT 1");
+  $brasil0434 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='brasil 04/34' ORDER BY id DESC LIMIT 1");
+  $argentina2038 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='argentina 2038' ORDER BY id DESC LIMIT 1");
 
-  $venezuela1126 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='venezuela 11/26' ORDER BY id DESC LIMIT 1");
-  $venezuela9727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='venezuela 97/27' ORDER BY id DESC LIMIT 1");
-  $venezuela0828 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM invierta.mv_bonos WHERE nombre='venezuela 08/28' ORDER BY id DESC LIMIT 1");
+  $venezuela1126 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 11/26' ORDER BY id DESC LIMIT 1");
+  $venezuela9727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 97/27' ORDER BY id DESC LIMIT 1");
+  $venezuela0828 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 08/28' ORDER BY id DESC LIMIT 1");
 
-  $ultima_actualizacion = $wpdb->get_row("SELECT ultima_actualizacion FROM invierta.mv_bonos ORDER BY id DESC LIMIT 1");
+  $ultima_actualizacion = $wpdb->get_row("SELECT ultima_actualizacion FROM mv_bonos ORDER BY id DESC LIMIT 1");
 
   function cargar_bono( $bono )
   {
@@ -85,22 +85,12 @@
   <?php if ( empty($ultima_actualizacion) ) : ?>
     <p></p>
   <?php else: ?>
-    <p style="text-align:center;margin-top:10px;">Informacion actualizada por ultima vez el <?php echo date("d/m/Y",strtotime($ultima_actualizacion->ultima_actualizacion)).' a las '.date("g:i e", strtotime($ultima_actualizacion->ultima_actualizacion)); ?></p>
+    <p style="text-align:center;margin-top:12px;">Informacion actualizada el <?php echo date("d/m/Y",strtotime($ultima_actualizacion->ultima_actualizacion)).' a las '.date("g:ia e", strtotime("-30 minutes", strtotime($ultima_actualizacion->ultima_actualizacion))).' -04:30 (VET)'; ?></p>
   <?php endif; ?>
     <div id="monedas">
       <h3>MONEDAS</h3>
-      <!--<div id="loader-monedas" class="loader">
-        <div id="bowlG">
-            <div id="bowl_ringG">
-                <div class="ball_holderG">
-                    <div class="ballG">
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>-->
       <div id="valores-monedas">
-          <table style="width: 100%;">
+          <table>
             <tbody>
               <tr>
                 <td style="font-weight: 800;">Euro <span style="color: rgb(170,170,170); font-weight: 400;">( EUR/USD )</span></td>
