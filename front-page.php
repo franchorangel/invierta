@@ -18,7 +18,6 @@
 </header>
 <nav id="menu-home" class="menu">
     <ul>
-        <!--<li><a href="#quienes-somos">PÁGINA PRINCIPAL</a></li>-->
         <li><a href="#indicadores">INDICADORES</a></li>
         <li><a href="#publicaciones">PUBLICACIONES</a></li>
         <li><a href="#videos">VIDEOS</a></li>
