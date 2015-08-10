@@ -82,7 +82,7 @@
 <div id="indicadores">
   <div id="wrapper-indicadores">
   <?php if ( empty($ultima_actualizacion) ) : ?>
-    <p></p>
+    <p style="display:none">None</p>
   <?php else: ?>
     <p style="text-align:center;margin-top:12px;">Informacion actualizada el <?php echo date("d/m/Y",strtotime($ultima_actualizacion->ultima_actualizacion)).' a las '.date("g:ia e", strtotime("-30 minutes", strtotime($ultima_actualizacion->ultima_actualizacion))).' -04:30 (VET)'; ?></p>
   <?php endif; ?>
@@ -281,19 +281,35 @@
       </div>
     </div>
     <div id="bonos">
+    <p style="margin-top:12px;visibility:hidden">None</p>
       <h3>BONOS LATINOAMERICANOS</h3>
       <table>
         <tr>
-            <th>Nombre</th>
-            <th>Precio (%)</th>
-            <th>Cambio (%)</th>
-            <th>Rendimiento (%)</th>
-            <th>Vencimiento</th>
+            <th style="width:32%;">Nombre</th>
+            <th style="width:14%;">Precio (%)</th>
+            <th style="width:14%;">Cambio (%)</th>
+            <th style="width:20%;">Rendimiento (%)</th>
+            <th style="width:20%;">Vencimiento</th>
         </tr>
+      </table>
+
+      <div id="overflow-bonos">
+      <table id="tabla-bonos">      
         <tr>
-          <td>ARGENTINA 2015</td>
-          <?php cargar_bono($argentina2015); ?>
-          <td>03-10-2015</td>
+          <td style="width:32%;">ARGENTINA 2015</td>
+          <?php if ( empty($argentina2015) )
+            {
+              echo '<td style="width:">No disponible</td>';
+              echo '<td>No disponible</td>';
+              echo '<td>No disponible</td>';
+            }
+            else
+            {
+              echo '<td style="width:14%">'.number_format((float)($argentina2015->precio), 2, ',', '').'</td>';
+              echo '<td style="width:14%">'.number_format((float)($argentina2015->cambio), 2, ',', '').'</td>';
+              echo '<td style="width:20%">'.number_format((float)($argentina2015->rendimiento), 2, ',', '').'</td>';
+            }?>
+          <td style="width:20%;">03-10-2015</td>
         </tr>
         <tr>
           <td>ECUADOR 15/20 REGS</td>
@@ -360,7 +376,33 @@
           <?php cargar_bono($argentina2038); ?>
           <td>31-12-2038</td>
         </tr>
+        <tr>
+          <td>ARGENTINA 2038 PAR</td>
+          <?php cargar_bono($argentina2038); ?>
+          <td>31-12-2038</td>
+        </tr>
+        <tr>
+          <td>ARGENTINA 2038 PAR</td>
+          <?php cargar_bono($argentina2038); ?>
+          <td>31-12-2038</td>
+        </tr>
+        <tr>
+          <td>ARGENTINA 2038 PAR</td>
+          <?php cargar_bono($argentina2038); ?>
+          <td>31-12-2038</td>
+        </tr>
+        <tr>
+          <td>ARGENTINA 2038 PAR</td>
+          <?php cargar_bono($argentina2038); ?>
+          <td>31-12-2038</td>
+        </tr>
+        <tr>
+          <td>ARGENTINA 2038 PAR</td>
+          <?php cargar_bono($argentina2038); ?>
+          <td>31-12-2038</td>
+        </tr>
       </table>
+      </div>
     </div>
   </div>
 <div id="publicaciones" class="home-item">

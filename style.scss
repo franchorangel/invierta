@@ -265,7 +265,7 @@ header{
 #indicadores{
     position:relative;
     width:100%;
-    height:850px;
+    height:860px;
 
     tr:hover{
         background:$blanco;
@@ -318,11 +318,29 @@ header{
         width:49%;
         padding-left:0;
         padding-right:4%;
-        overflow:scroll-x;
-        
+
         table{
             margin-top:-15px;
+
+            tr:hover{
+                background:$azul;
+                color:$blanco;
+            }
+        }
+          
+        #overflow-bonos{
+            width:101.6%;
+            height:75%;
             overflow-y:scroll;
+            padding-left:0;
+        }
+
+        #tabla-bonos{
+            margin-top:0;
+            tr:hover{
+                background:$blanco;
+                color:$gris;
+            }
         }
     }
 
