@@ -484,13 +484,10 @@ h1.titulo-archivo{
 
     .archive-item{
         margin-bottom:20px;
-        //display:table;
     }
 
     .item-wrapper{
         padding:15px 0;
-       // display:table-cell;
-        //vertical-align:middle;
     }
 
     a{text-decoration:none;}
@@ -644,6 +641,11 @@ h1.titulo-archivo{
             padding:2%;
             width:96%;
         }
+
+    //    #overflow-bonos{
+    //        overflow-y:visible;
+    //        overflow:auto;
+    //    } 
     }
 
     #publicaciones{

@@ -294,114 +294,91 @@
       </table>
 
       <div id="overflow-bonos">
-      <table id="tabla-bonos">      
-        <tr>
-          <td style="width:32%;">ARGENTINA 2015</td>
-          <?php if ( empty($argentina2015) )
-            {
-              echo '<td style="width:">No disponible</td>';
-              echo '<td>No disponible</td>';
-              echo '<td>No disponible</td>';
-            }
-            else
-            {
-              echo '<td style="width:14%">'.number_format((float)($argentina2015->precio), 2, ',', '').'</td>';
-              echo '<td style="width:14%">'.number_format((float)($argentina2015->cambio), 2, ',', '').'</td>';
-              echo '<td style="width:20%">'.number_format((float)($argentina2015->rendimiento), 2, ',', '').'</td>';
-            }?>
-          <td style="width:20%;">03-10-2015</td>
-        </tr>
-        <tr>
-          <td>ECUADOR 15/20 REGS</td>
-          <?php cargar_bono($ecuador1520); ?>
-          <td>24-03-2020</td>
-        </tr>
-        <tr>
-          <td>COLOMBIA 13/24</td>
-          <?php cargar_bono($colombia1324); ?>
-          <td>26-02-2024</td>
-        </tr>
-        <tr>
-          <td>COLOMBIA 04/24</td>
-          <?php cargar_bono($colombia0424); ?>
-          <td>21-05-2024</td>
-        </tr>
-        <tr>
-          <td>PERU 05/25</td>
-          <?php cargar_bono($peru0525); ?>
-          <td>21-07-2025</td>
-        </tr>
-        <tr>
-          <td>VENEZUELA 11/26 REGS</td>
-          <?php cargar_bono($venezuela1126); ?>
-          <td>21-10-2026</td>
-        </tr>
-        <tr>
-          <td>BRASIL 97/27</td>
-          <?php cargar_bono($brasil9727); ?>
-          <td>15-05-2027</td>
-        </tr>
-        <tr>
-          <td>VENEZUELA 97/27</td>
-          <?php cargar_bono($venezuela9727); ?>    
-          <td>15-09-2027</td>
-        </tr>
-        <tr>
-          <td>VENEZUELA 08/28 REGS</td>
-          <?php cargar_bono($venezuela0828); ?>
-          <td>07-05-2028</td>
-        </tr>
-        <tr>
-          <td>MEXICO 01/31 MTN</td>
-          <?php cargar_bono($mexico0131); ?>
-          <td>15-08-2031</td>
-        </tr>
-        <tr>
-          <td>MEXICO 03/33 MTN</td>
-          <?php cargar_bono($mexico0333); ?>
-          <td>08-04-2033</td>
-        </tr>
-        <tr>
-          <td>PERU 03/33</td>
-          <?php cargar_bono($peru0333); ?>
-          <td>21-11-2033</td>
-        </tr>
-        <tr>
-          <td>BRASIL 04/34</td>
-          <?php cargar_bono($brasil0434); ?>
-          <td>20-01-2034</td>
-        </tr>
-        <tr>
-          <td>ARGENTINA 2038 PAR</td>
-          <?php cargar_bono($argentina2038); ?>
-          <td>31-12-2038</td>
-        </tr>
-        <tr>
-          <td>ARGENTINA 2038 PAR</td>
-          <?php cargar_bono($argentina2038); ?>
-          <td>31-12-2038</td>
-        </tr>
-        <tr>
-          <td>ARGENTINA 2038 PAR</td>
-          <?php cargar_bono($argentina2038); ?>
-          <td>31-12-2038</td>
-        </tr>
-        <tr>
-          <td>ARGENTINA 2038 PAR</td>
-          <?php cargar_bono($argentina2038); ?>
-          <td>31-12-2038</td>
-        </tr>
-        <tr>
-          <td>ARGENTINA 2038 PAR</td>
-          <?php cargar_bono($argentina2038); ?>
-          <td>31-12-2038</td>
-        </tr>
-        <tr>
-          <td>ARGENTINA 2038 PAR</td>
-          <?php cargar_bono($argentina2038); ?>
-          <td>31-12-2038</td>
-        </tr>
-      </table>
+        <table id="tabla-bonos">      
+          <tr>
+            <td style="width:32%;">ARGENTINA 2015</td>
+            <?php
+              if ( empty($argentina2015) )
+              {
+                echo '<td style="width:14%">No disponible</td>';
+                echo '<td style="width:14%">No disponible</td>';
+                echo '<td style="width:20%">No disponible</td>';
+              }
+              else
+              {
+                echo '<td style="width:14%">'.number_format((float)($argentina2015->precio), 2, ',', '').'</td>';
+                echo '<td style="width:14%">'.number_format((float)($argentina2015->cambio), 2, ',', '').'</td>';
+                echo '<td style="width:20%">'.number_format((float)($argentina2015->rendimiento), 2, ',', '').'</td>';
+              }
+            ?>
+            <td style="width:20%;">03-10-2015</td>
+          </tr>
+          <tr>
+            <td>ECUADOR 15/20 REGS</td>
+            <?php cargar_bono($ecuador1520); ?>
+            <td>24-03-2020</td>
+          </tr>
+          <tr>
+            <td>COLOMBIA 13/24</td>
+            <?php cargar_bono($colombia1324); ?>
+            <td>26-02-2024</td>
+          </tr>
+          <tr>
+            <td>COLOMBIA 04/24</td>
+            <?php cargar_bono($colombia0424); ?>
+            <td>21-05-2024</td>
+          </tr>
+          <tr>
+            <td>PERU 05/25</td>
+            <?php cargar_bono($peru0525); ?>
+            <td>21-07-2025</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 11/26 REGS</td>
+            <?php cargar_bono($venezuela1126); ?>
+            <td>21-10-2026</td>
+          </tr>
+          <tr>
+            <td>BRASIL 97/27</td>
+            <?php cargar_bono($brasil9727); ?>
+            <td>15-05-2027</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 97/27</td>
+            <?php cargar_bono($venezuela9727); ?>    
+            <td>15-09-2027</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 08/28 REGS</td>
+            <?php cargar_bono($venezuela0828); ?>
+            <td>07-05-2028</td>
+          </tr>
+          <tr>
+            <td>MEXICO 01/31 MTN</td>
+            <?php cargar_bono($mexico0131); ?>
+            <td>15-08-2031</td>
+          </tr>
+          <tr>
+            <td>MEXICO 03/33 MTN</td>
+            <?php cargar_bono($mexico0333); ?>
+            <td>08-04-2033</td>
+          </tr>
+          <tr>
+            <td>PERU 03/33</td>
+            <?php cargar_bono($peru0333); ?>
+            <td>21-11-2033</td>
+          </tr>
+          <tr>
+            <td>BRASIL 04/34</td>
+            <?php cargar_bono($brasil0434); ?>
+            <td>20-01-2034</td>
+          </tr>
+          <tr>
+            <td>ARGENTINA 2038 PAR</td>
+            <?php cargar_bono($argentina2038); ?>
+            <td>31-12-2038</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
