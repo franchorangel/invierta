@@ -11,6 +11,10 @@ $(document).ready(function() {
             $('#menu').removeClass('menu-fixed');   
         }
     });
+
+  $(".menu #menu-trigger").click(function () {
+    $(".menu ul").slideToggle();
+  });
 });
 </script>
 <script>
