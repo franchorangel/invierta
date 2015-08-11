@@ -488,11 +488,50 @@ h1.titulo-archivo {
       width: 70% !important;
       height: 400px;
       margin: 20px 15% !important;
-      margin-top: 0 !important; } }
-@media (max-width: 770px) {
-  .menu {
-    min-width: 770px; }
+      margin-top: 0 !important; }
 
+  #menu-trigger {
+    display: none; } }
+@media (max-width: 950px) {
+  .menu {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0; }
+    .menu #menu-trigger {
+      display: block;
+      position: relative;
+      z-index: 1000;
+      height: 85px;
+      cursor: pointer; }
+      .menu #menu-trigger p {
+        color: #414a50;
+        float: right; }
+    .menu #menu-boton {
+      margin-top: 22px;
+      margin-left: 7px;
+      margin-right: 5%;
+      float: right; }
+    .menu .icon-bar {
+      background: #414a50;
+      display: block;
+      width: 33px;
+      height: 3px;
+      border-radius: 1px;
+      margin-top: 6px; }
+    .menu .icon-bar:first-child {
+      margin-top: 10px; }
+    .menu ul {
+      position: relative;
+      display: block;
+      width: 100%;
+      background: #fafafa;
+      z-index: 800;
+      display: none; }
+      .menu ul li {
+        float: none;
+        text-align: center;
+        width: 100%; } }
+@media (max-width: 770px) {
   #videos .home-item-post {
     margin: 30px auto;
     width: 60%;

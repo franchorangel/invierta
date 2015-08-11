@@ -17,13 +17,21 @@
   </div>
 </header>
 <nav id="menu-home" class="menu">
-    <ul>
-        <li><a href="#indicadores">INDICADORES</a></li>
-        <li><a href="#publicaciones">PUBLICACIONES</a></li>
-        <li><a href="#videos">VIDEOS</a></li>
-        <li><a href="#portafolio">PORTAFOLIO</a></li>
-        <li><a href="<?php $page_contacto = get_page_by_title( 'Contacto' ); echo get_page_link($page_contacto->ID); ?>">CONTACTO</a></li>
-    </ul>
+  <div id="menu-trigger">
+    <div id="menu-boton">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <p>MENU</p>
+  </div>
+  <ul>
+      <li><a href="#indicadores">INDICADORES</a></li>
+      <li><a href="#publicaciones">PUBLICACIONES</a></li>
+      <li><a href="#videos">VIDEOS</a></li>
+      <li><a href="#portafolio">PORTAFOLIO</a></li>
+      <li><a href="<?php $page_contacto = get_page_by_title( 'Contacto' ); echo get_page_link($page_contacto->ID); ?>">CONTACTO</a></li>
+  </ul>
 </nav>
 <div id="quienes-somos"></div>
 <?php
