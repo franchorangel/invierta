@@ -32,6 +32,3 @@
     <li><a href="<?php $page_contacto = get_page_by_title( 'Contacto' ); echo get_page_link($page_contacto->ID); ?>">CONTACTO</a></li>
   </ul>
 </nav>
-<script>
-  
-</script>

@@ -523,7 +523,8 @@ h1.titulo-archivo {
       width: 33px;
       height: 3px;
       border-radius: 1px;
-      top: 10px; }
+      top: 10px;
+      transition: ease all 0.5s; }
     .menu .icon-bar:nth-child(2) {
       top: 19px; }
     .menu .icon-bar:nth-child(3) {
