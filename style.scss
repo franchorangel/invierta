@@ -187,6 +187,10 @@ header{
     li{
         width:20%;
     }
+
+    ul{
+        background:$blanco;
+    }
 }
 
 .menu{
@@ -197,6 +201,8 @@ header{
     background:rgba(250,250,250,0.9);
     height:85px;
     line-height:85px;
+
+    ul{display:block;}
 
     li{
         width:16.5%;
@@ -227,6 +233,10 @@ header{
     position:fixed;
     top:0;
     left:0;
+}
+
+#menu-trigger{
+    display:none;
 }
 
 /******** END GENERAL ****************/
@@ -673,10 +683,6 @@ h1.titulo-archivo{
         }
     }
 
-    #menu-trigger{
-        display:none;
-    }
-
 }
 
 @media (max-width:950px) {
@@ -699,23 +705,29 @@ h1.titulo-archivo{
         }
 
         #menu-boton{
+            position:relative;
             margin-top:22px;
             margin-left:7px;
-            margin-right:5%;
+            margin-right:8%;
             float:right;
         }
         
         .icon-bar{
+            position:absolute;
             background:$gris;
             display:block;
             width:33px;
             height:3px;
             border-radius:1px;
-            margin-top:6px;
+            top:10px;
         }
-        
-        .icon-bar:first-child{
-            margin-top:10px;
+
+        .icon-bar:nth-child(2) {
+            top:19px;
+        }
+
+        .icon-bar:nth-child(3){
+            top:28px;
         }
         
         ul{
@@ -729,7 +741,7 @@ h1.titulo-archivo{
             li{
                 float:none;
                 text-align:center;
-                width:100%;
+                width:100% !important;
             }
         }
     }
@@ -745,3 +757,12 @@ h1.titulo-archivo{
 
 }
 
+.rotate-r {
+    transform: rotate(45deg);
+    top: 19px !important;
+}
+
+.rotate-l {
+    transform: rotate(-45deg);
+    top: 19px !important;
+}

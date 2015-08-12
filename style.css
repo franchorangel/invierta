@@ -142,6 +142,8 @@ header #logo-header {
   width: 100%; }
   #menu-home li {
     width: 20%; }
+  #menu-home ul {
+    background: #e6e6e6; }
 
 .menu {
   width: 90%;
@@ -151,6 +153,8 @@ header #logo-header {
   background: rgba(250, 250, 250, 0.9);
   height: 85px;
   line-height: 85px; }
+  .menu ul {
+    display: block; }
   .menu li {
     width: 16.5%;
     text-align: center;
@@ -173,6 +177,9 @@ header #logo-header {
   position: fixed;
   top: 0;
   left: 0; }
+
+#menu-trigger {
+  display: none; }
 
 /******** END GENERAL ****************/
 /******** FRONT PAGE *****************/
@@ -488,10 +495,7 @@ h1.titulo-archivo {
       width: 70% !important;
       height: 400px;
       margin: 20px 15% !important;
-      margin-top: 0 !important; }
-
-  #menu-trigger {
-    display: none; } }
+      margin-top: 0 !important; } }
 @media (max-width: 950px) {
   .menu {
     width: 100%;
@@ -507,19 +511,23 @@ h1.titulo-archivo {
         color: #414a50;
         float: right; }
     .menu #menu-boton {
+      position: relative;
       margin-top: 22px;
       margin-left: 7px;
-      margin-right: 5%;
+      margin-right: 8%;
       float: right; }
     .menu .icon-bar {
+      position: absolute;
       background: #414a50;
       display: block;
       width: 33px;
       height: 3px;
       border-radius: 1px;
-      margin-top: 6px; }
-    .menu .icon-bar:first-child {
-      margin-top: 10px; }
+      top: 10px; }
+    .menu .icon-bar:nth-child(2) {
+      top: 19px; }
+    .menu .icon-bar:nth-child(3) {
+      top: 28px; }
     .menu ul {
       position: relative;
       display: block;
@@ -530,11 +538,18 @@ h1.titulo-archivo {
       .menu ul li {
         float: none;
         text-align: center;
-        width: 100%; } }
+        width: 100% !important; } }
 @media (max-width: 770px) {
   #videos .home-item-post {
     margin: 30px auto;
     width: 60%;
     float: none; } }
+.rotate-r {
+  transform: rotate(45deg);
+  top: 19px !important; }
+
+.rotate-l {
+  transform: rotate(-45deg);
+  top: 19px !important; }
 
 /*# sourceMappingURL=style.css.map */
