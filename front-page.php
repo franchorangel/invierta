@@ -81,7 +81,7 @@
   $venezuela0434 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 04/34' ORDER BY id DESC LIMIT 1");
   $venezuela0738 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 07/38' ORDER BY id DESC LIMIT 1");
 
-  $pdvsa0915 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 05/15' ORDER BY id DESC");
+  $pdvsa0915 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 09/15' ORDER BY id DESC");
   $pdvsa0916 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 09/16' ORDER BY id DESC"); 
   $pdvsa0717 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 07/17' ORDER BY id DESC");
   $pdvsa1017 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 10/17' ORDER BY id DESC");
