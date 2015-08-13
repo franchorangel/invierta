@@ -64,9 +64,34 @@
   $brasil0434 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='brasil 04/34' ORDER BY id DESC LIMIT 1");
   $argentina2038 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='argentina 2038' ORDER BY id DESC LIMIT 1");
 
+  $venezuela0516 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 05/16' ORDER BY id DESC LIMIT 1");  
+  $venezuela0118 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 01/18' ORDER BY id DESC LIMIT 1");
+  $venezuela9818 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 98/18' ORDER BY id DESC LIMIT 1");
+  $venezuela0318 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 03/18' ORDER BY id DESC LIMIT 1");
+  $venezuela0919 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 09/19' ORDER BY id DESC LIMIT 1");
+  $venezuela0520 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 05/20' ORDER BY id DESC LIMIT 1");
+  $venezuela1022 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 10/22' ORDER BY id DESC LIMIT 1");
+  $venezuela0823 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 08/23' ORDER BY id DESC LIMIT 1");
+  $venezuela0924 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 09/24' ORDER BY id DESC LIMIT 1");
+  $venezuela0525 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 05/25' ORDER BY id DESC LIMIT 1");
   $venezuela1126 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 11/26' ORDER BY id DESC LIMIT 1");
   $venezuela9727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 97/27' ORDER BY id DESC LIMIT 1");
   $venezuela0828 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 08/28' ORDER BY id DESC LIMIT 1");
+  $venezuela1131 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 11/31' ORDER BY id DESC LIMIT 1");
+  $venezuela0434 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 04/34' ORDER BY id DESC LIMIT 1");
+  $venezuela0738 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='venezuela 07/38' ORDER BY id DESC LIMIT 1");
+
+  $pdvsa0915 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 05/15' ORDER BY id DESC");
+  $pdvsa0916 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 09/16' ORDER BY id DESC"); 
+  $pdvsa0717 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 07/17' ORDER BY id DESC");
+  $pdvsa1017 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 10/17' ORDER BY id DESC");
+  $pdvsa1121 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 11/21' ORDER BY id DESC");
+  $pdvsa1122 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 11/22' ORDER BY id DESC");
+  $pdvsa1424 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 14/24' ORDER BY id DESC");
+  $pdvsa1326 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 13/26' ORDER BY id DESC");
+  $pdvsa0727 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 07/27' ORDER BY id DESC");
+  $pdvsa1235 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 12/35' ORDER BY id DESC");
+  $pdvsa0737 = $wpdb->get_row("SELECT precio, cambio, rendimiento FROM mv_bonos WHERE nombre='pdvsa 07/37' ORDER BY id DESC");
 
   $ultima_actualizacion = $wpdb->get_row("SELECT ultima_actualizacion FROM mv_bonos ORDER BY id DESC LIMIT 1");
 
@@ -322,9 +347,79 @@
             <td style="width:20%;">03-10-2015</td>
           </tr>
           <tr>
+            <td>PDVSA 09/15</td>
+            <?php cargar_bono($pdvsa0915); ?>
+            <td>28-10-2015</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 05/16</td>
+            <?php cargar_bono($venezuela0516); ?>
+            <td>26-02-2016</td>
+          </tr>
+          <tr>
+            <td>PDVSA 09/16</td>
+            <?php cargar_bono($pdvsa0916); ?>
+            <td>28-10-2016</td>
+          </tr>
+          <tr>
+            <td>PDVSA 07/17</td>
+            <?php cargar_bono($pdvsa0717); ?>
+            <td>12-04-2017</td>
+          </tr>
+          <tr>
+            <td>PDVSA 10/17 REGS</td>
+            <?php cargar_bono($pdvsa1017); ?>
+            <td>02-11-2017</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 01/18 REGS</td>
+            <?php cargar_bono($venezuela0118); ?>
+            <td>15-08-2018</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 98/18</td>
+            <?php cargar_bono($venezuela9818); ?>
+            <td>15-08-2018</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 03/18 REGS</td>
+            <?php cargar_bono($venezuela0318); ?>
+            <td>01-12-2018</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 09/19 REGS</td>
+            <?php cargar_bono($venezuela0919); ?>
+            <td>13-10-2019</td>
+          </tr>
+          <tr>
             <td>ECUADOR 15/20 REGS</td>
             <?php cargar_bono($ecuador1520); ?>
             <td>24-03-2020</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 05/20 REGS</td>
+            <?php cargar_bono($venezuela0520); ?>
+            <td>09-12-2020</td>
+          </tr>
+          <tr>
+            <td>PDVSA 11/21</td>
+            <?php cargar_bono($pdvsa1121); ?>
+            <td>17-11-2021</td>
+          </tr>
+          <tr>
+            <td>PDVSA 11/22</td>
+            <?php cargar_bono($pdvsa1122); ?>
+            <td>17-02-2022</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 10/22 REGS</td>
+            <?php cargar_bono($venezuela1022); ?>
+            <td>23-08-2022</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 08/23 REGS</td>
+            <?php cargar_bono($venezuela0823); ?>
+            <td>07-05-2023</td>
           </tr>
           <tr>
             <td>COLOMBIA 13/24</td>
@@ -332,9 +427,24 @@
             <td>26-02-2024</td>
           </tr>
           <tr>
+            <td>PDVSA 14/24</td>
+            <?php cargar_bono($pdvsa1424); ?>
+            <td>16-05-2024</td>
+          </tr>
+          <tr>
             <td>COLOMBIA 04/24</td>
             <?php cargar_bono($colombia0424); ?>
             <td>21-05-2024</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 09/24 REGS</td>
+            <?php cargar_bono($venezuela0924); ?>
+            <td>13-10-2024</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 05/25</td>
+            <?php cargar_bono($venezuela0525); ?>
+            <td>21-04-2025</td>
           </tr>
           <tr>
             <td>PERU 05/25</td>
@@ -345,6 +455,16 @@
             <td>VENEZUELA 11/26 REGS</td>
             <?php cargar_bono($venezuela1126); ?>
             <td>21-10-2026</td>
+          </tr>
+          <tr>
+            <td>PDVSA 13/26</td>
+            <?php cargar_bono($pdvsa1326); ?>
+            <td>15-11-2026</td>
+          </tr>
+          <tr>
+            <td>PDVSA 07/27</td>
+            <?php cargar_bono($pdvsa0727); ?>
+            <td>12-04-2027</td>
           </tr>
           <tr>
             <td>BRASIL 97/27</td>
@@ -362,6 +482,12 @@
             <td>07-05-2028</td>
           </tr>
           <tr>
+          <tr>
+            <td>VENEZUELA 11/31</td>
+            <?php cargar_bono($venezuela1131); ?>
+            <td>05-08-2031</td>
+          </tr>
+          <tr>
             <td>MEXICO 01/31 MTN</td>
             <?php cargar_bono($mexico0131); ?>
             <td>15-08-2031</td>
@@ -377,9 +503,29 @@
             <td>21-11-2033</td>
           </tr>
           <tr>
+            <td>VENEZUELA 04/34</td>
+            <?php cargar_bono($venezuela0434); ?>
+            <td>13-01-2034</td>
+          </tr>
+          <tr>
             <td>BRASIL 04/34</td>
             <?php cargar_bono($brasil0434); ?>
             <td>20-01-2034</td>
+          </tr>
+          <tr>
+            <td>PDVSA 12/35</td>
+            <?php cargar_bono($pdvsa1235); ?>
+            <td>17-05-2035</td>
+          </tr>
+          <tr>
+            <td>PDVSA 07/37</td>
+            <?php cargar_bono($pdvsa0737); ?>
+            <td>12-04-2037</td>
+          </tr>
+          <tr>
+            <td>VENEZUELA 07/38 REGS</td>
+            <?php cargar_bono($venezuela0738); ?>
+            <td>31-03-2038</td>
           </tr>
           <tr>
             <td>ARGENTINA 2038 PAR</td>
