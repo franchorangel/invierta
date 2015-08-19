@@ -436,14 +436,16 @@ h1.titulo-archivo {
 /********** REDES ****************/
 #redes {
   margin: auto;
-  height: 1100px; }
+  height: 1100px;
+  max-width: 990px; }
   #redes div {
     float: left;
-    width: 50%; }
+    width: 50%;
+    max-width: 580px; }
   #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3 {
     width: 90% !important;
     height: 400px;
-    margin: 20px !important;
+    margin: 5% !important;
     margin-top: 0 !important; }
 
 /********** REDES END ************/
@@ -494,8 +496,9 @@ h1.titulo-archivo {
     #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3 {
       width: 70% !important;
       height: 400px;
-      margin: 20px 15% !important;
-      margin-top: 0 !important; } }
+      margin: 15% !important;
+      margin-top: 0 !important;
+      margin-bottom: 10px !important; } }
 @media (max-width: 950px) {
   .menu {
     width: 100%;

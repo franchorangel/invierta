@@ -588,16 +588,18 @@ h1.titulo-archivo{
 #redes{
     margin:auto;
     height:1100px;
+    max-width:990px;
 
     div{
         float:left;
         width:50%;
+        max-width:580px;
     }
 
     iframe#twitter-widget-0, iframe#twitter-widget-1, iframe#twitter-widget-2, iframe#twitter-widget-3  {
         width:90% !important;
         height:400px;
-        margin:20px !important;
+        margin: 5% !important;
         margin-top:0 !important;
     }
 }
@@ -678,8 +680,9 @@ h1.titulo-archivo{
         iframe#twitter-widget-0, iframe#twitter-widget-1, iframe#twitter-widget-2, iframe#twitter-widget-3  {
             width:70% !important;
             height:400px;
-            margin:20px 15% !important;
+            margin:15% !important;
             margin-top:0 !important;
+            margin-bottom: 10px !important;
         }
     }
 
