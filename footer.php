@@ -12,14 +12,18 @@
   });
 
   $( window ).resize(function() {
+    
+    $(".menu .icon-bar:nth-child(2)").show();
+    
     if($( window ).width() >= 950){
       $("#menu-home ul").show();
     } else {
       $("#menu-home ul").hide();
+      $(".menu .icon-bar:nth-child(1)").removeClass("rotate-r");
+      $(".menu .icon-bar:nth-child(3)").removeClass("rotate-l");
+
     }
   });
-
-
 
   $(".menu #menu-trigger").click(function () {
       $(".menu ul").slideToggle();

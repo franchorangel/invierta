@@ -337,11 +337,9 @@ header #logo-header {
 
 #portafolio {
   padding: 115px 20%;
-  height: 300px;
   text-align: center;
   background: #ad5325; }
   #portafolio .portafolio-home-item {
-    height: 105px;
     margin: 30px auto; }
     #portafolio .portafolio-home-item table {
       border: 1px #e6e6e6 solid;
@@ -492,7 +490,8 @@ h1.titulo-archivo {
     height: 2200px; }
     #redes div {
       float: none;
-      width: 100%; }
+      width: 100%;
+      max-width: 100%; }
     #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3 {
       width: 70% !important;
       height: 400px;
@@ -543,11 +542,6 @@ h1.titulo-archivo {
         float: none;
         text-align: center;
         width: 100% !important; } }
-@media (max-width: 770px) {
-  #videos .home-item-post {
-    margin: 30px auto;
-    width: 60%;
-    float: none; } }
 .rotate-r {
   transform: rotate(45deg);
   top: 19px !important; }
@@ -555,5 +549,71 @@ h1.titulo-archivo {
 .rotate-l {
   transform: rotate(-45deg);
   top: 19px !important; }
+
+@media (max-width: 770px) {
+  body {
+    min-width: 320px; }
+
+  header #logo-home .logo {
+    width: 100%;
+    height: 165px;
+    background-size: 90%; }
+  header #logo-home p {
+    padding: 0 5%; }
+
+  #indicadores #bonos table td:nth-child(3), #indicadores #bonos table th:nth-child(3) {
+    display: none; }
+  #indicadores #bonos table td:nth-child(4), #indicadores #bonos table th:nth-child(4) {
+    display: none; }
+  #indicadores #bonos table td:nth-child(5), #indicadores #bonos table th:nth-child(5) {
+    display: none; }
+
+  .home-item {
+    width: 90%; }
+
+  #publicaciones {
+    padding: 40px 5%;
+    height: 780px !important; }
+    #publicaciones img {
+      float: none;
+      display: inline-block;
+      margin: 30px auto; }
+    #publicaciones .home-item-post {
+      text-align: center; }
+
+  h1 {
+    font-size: 1.8rem !important; }
+
+  h2 {
+    font-size: 1.8rem !important; }
+
+  h3 {
+    font-size: 1.8rem !important; }
+
+  #videos {
+    padding: 20px 5%; }
+    #videos .home-item-post {
+      margin: 30px auto;
+      width: 60%;
+      float: none; }
+
+  #portafolio {
+    padding: 115px 5%; }
+
+  footer #logo-footer {
+    width: 100%;
+    background-size: 100%; }
+
+  .menu {
+    height: 55px !important; }
+    .menu #menu-trigger {
+      height: 55px; }
+      .menu #menu-trigger p {
+        height: 55px;
+        line-height: 55px; }
+    .menu #menu-boton {
+      margin-top: 7px;
+      margin-right: 55px;
+      margin-left: 10px; } }
 
 /*# sourceMappingURL=style.css.map */

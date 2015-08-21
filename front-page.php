@@ -4,6 +4,7 @@
   <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
   <title>Invierta - Asesores de Inversión</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div>
@@ -552,7 +553,6 @@
               }
               #publicaciones{
                   height: 470px;
-                  padding: 65px 20%;
               }
               .home-item-post {
                   min-height:180px !important;
@@ -630,7 +630,7 @@
 
 </div>
 <script>
-﻿$('a[href*=#]:not([href=#])').click(function () {
+$('a[href*=#]:not([href=#])').click(function () {
 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
     var target = $(this.hash) ;
     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
