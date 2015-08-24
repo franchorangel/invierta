@@ -440,9 +440,9 @@ h1.titulo-archivo {
     float: left;
     width: 50%;
     max-width: 580px; }
-  #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3 {
+  #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3, #redes .twitter-timeline {
     width: 90% !important;
-    height: 400px;
+    height: 400px !important;
     margin: 5% !important;
     margin-top: 0 !important; }
 
@@ -492,12 +492,13 @@ h1.titulo-archivo {
       float: none;
       width: 100%;
       max-width: 100%; }
-    #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3 {
+    #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3, #redes .twitter-timeline {
       width: 70% !important;
-      height: 400px;
+      height: 400px !important;
       margin: 15% !important;
       margin-top: 0 !important;
-      margin-bottom: 10px !important; } }
+      margin-bottom: 10px !important;
+      min-height: 400px !important; } }
 @media (max-width: 950px) {
   .menu {
     width: 100%;

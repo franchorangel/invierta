@@ -594,9 +594,9 @@ h1.titulo-archivo{
         max-width:580px;
     }
 
-    iframe#twitter-widget-0, iframe#twitter-widget-1, iframe#twitter-widget-2, iframe#twitter-widget-3  {
+    iframe#twitter-widget-0, iframe#twitter-widget-1, iframe#twitter-widget-2, iframe#twitter-widget-3, .twitter-timeline  {
         width:90% !important;
-        height:400px;
+        height:400px !important;
         margin: 5% !important;
         margin-top:0 !important;
     }
@@ -671,12 +671,13 @@ h1.titulo-archivo{
             max-width:100%;
         }
 
-        iframe#twitter-widget-0, iframe#twitter-widget-1, iframe#twitter-widget-2, iframe#twitter-widget-3  {
+        iframe#twitter-widget-0, iframe#twitter-widget-1, iframe#twitter-widget-2, iframe#twitter-widget-3, .twitter-timeline  {
             width:70% !important;
-            height:400px;
+            height:400px !important;
             margin:15% !important;
             margin-top:0 !important;
             margin-bottom: 10px !important;
+            min-height:400px !important;
         }
     }
 
