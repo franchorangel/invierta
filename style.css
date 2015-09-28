@@ -55,11 +55,12 @@ table {
   src: url("fonts/lato-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/lato-light-webfont.woff2") format("woff2"), url("fonts/lato-light-webfont.woff") format("woff"), url("fonts/lato-light-webfont.ttf") format("truetype"), url("fonts/lato-light-webfont.svg#latolight") format("svg");
   font-weight: normal;
   font-style: normal; }
+/******* GENERAL *************/
 p {
   font-size: 1rem; }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   margin: 40px 0;
   text-align: center; }
 
@@ -69,57 +70,131 @@ h3 {
   margin: 40px 0; }
 
 body {
-  background: #414a50;
-  color: #e6e6e6;
-  font-family: latolight; }
+  min-width: 1200px;
+  font-family: latolight;
+  color: #e6e6e6; }
+  body > div {
+    background: #414a50; }
+  body #main {
+    background: #e6e6e6; }
+
+html, body {
+  height: 100%; }
 
 footer {
   width: 60%;
   padding: 20px 20%;
-  height: 200px; }
+  height: 200px;
+  background: #414a50;
+  clear: both; }
+  footer #logo-footer {
+    width: 300px;
+    height: 100%;
+    margin: auto;
+    background: url("imagenes/logo-footer.png") center no-repeat; }
+  footer #pagina-construccion {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 5000;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 70px;
+    font-size: 2rem; }
 
-header {
+#header-home {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   height: 600px; }
-  header #imagenes-header {
-    width: 100%;
-    z-index: 1; }
-    header #imagenes-header img {
-      max-width: 100%;
-      position: absolute;
-      min-height: 100%;
-      bottom: -150px; }
-  header #logo {
-    position: absolute;
-    top: 100px;
-    width: 100%;
-    z-index: 100;
-    text-align: center; }
-    header #logo img {
-      width: 400px; }
 
-#menu {
-  width: 150px;
+header #imagenes-header {
+  width: 100%;
+  height: 100%;
+  z-index: 1; }
+header #logo-home {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  z-index: 100;
+  text-align: center; }
+  header #logo-home .logo {
+    margin: auto;
+    width: 500px;
+    height: 260px;
+    background: url("imagenes/logo-home.png") center no-repeat; }
+  header #logo-home p {
+    padding: 0 28%;
+    line-height: 1.6;
+    font-size: 1.1rem; }
+header #logo-header {
+  width: 340px;
+  height: 150px;
+  margin: auto;
+  background: url("imagenes/logo-header.png") center no-repeat; }
+
+#menu-home {
   position: fixed;
-  top: 200px;
-  left: 00px;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 100%; }
+  #menu-home li {
+    width: 20%; }
+  #menu-home ul {
+    background: #e6e6e6; }
+
+.menu {
+  width: 90%;
+  padding: 0 5%;
   z-index: 1000;
-  padding-left: 25px; }
-  #menu h1 {
-    padding: 5px 0; }
-  #menu li {
-    margin: 15px 0; }
-    #menu li a {
-      padding: 5px 0;
+  background: rgba(0, 0, 0, 0.7);
+  background: rgba(250, 250, 250, 0.9);
+  height: 85px;
+  line-height: 85px; }
+  .menu ul {
+    display: block; }
+  .menu li {
+    width: 16.5%;
+    text-align: center;
+    float: left; }
+    .menu li a {
+      padding: 0;
       color: white;
+      color: black;
       text-decoration: none;
       transition: all ease 0.3s; }
-      #menu li a:hover {
-        color: #ffd800; }
+      .menu li a:hover {
+        color: #fa9c1f; }
+
+#menu li a {
+  color: #414a50; }
+#menu li a:hover {
+  color: #fa9c1f; }
+
+.menu-fixed {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+#menu-trigger {
+  display: none; }
+
+/******** END GENERAL ****************/
+/******** FRONT PAGE *****************/
+.home-item {
+  width: 60%; }
+  .home-item a {
+    color: #e6e6e6;
+    text-decoration: none;
+    clear: both;
+    display: block; }
+    .home-item a:hover {
+      text-decoration: underline; }
+
+#publicaciones a {
+  display: inline; }
 
 #quienes-somos {
   position: absolute;
@@ -127,29 +202,81 @@ header {
   top: 0;
   left: 0;
   width: 60%;
-  height: 160px;
-  padding: 220px 20%;
+  height: 100px;
+  padding: 250px 20%;
   background: rgba(60, 60, 60, 0.6);
   text-align: center; }
 
 #indicadores {
+  position: relative;
   width: 100%;
-  height: 1000px; }
+  height: 860px; }
+  #indicadores tr:hover {
+    background: #e6e6e6;
+    color: #414a50; }
   #indicadores div {
-    width: 40%;
-    padding-left: 10%;
+    width: 43%;
+    padding-left: 4%;
     float: left;
     height: 100%; }
   #indicadores #monedas {
-    width: 100%;
-    height: 50%; }
+    width: 96%;
+    height: 50%;
+    position: relative; }
+    #indicadores #monedas td {
+      padding: 15px 0; }
+      #indicadores #monedas td:nth-child(1) {
+        padding-left: 10%;
+        width: 80%; }
+      #indicadores #monedas td:nth-child(2) {
+        padding-right: 3%; }
+    #indicadores #monedas #valores-monedas {
+      width: 100%;
+      padding: 0;
+      height: auto; }
   #indicadores #commodities {
-    width: 100%;
-    height: 50%; }
+    width: 96%;
+    height: 50%;
+    margin-top: 50px; }
+    #indicadores #commodities table {
+      width: 100%; }
+    #indicadores #commodities td {
+      padding: 15px 0; }
+    #indicadores #commodities td:nth-child(1) {
+      padding-left: 10%;
+      width: 80%; }
   #indicadores #bonos {
     background: #0077c1;
+    width: 49%;
     padding-left: 0;
-    padding-right: 10%; }
+    padding-right: 4%; }
+    #indicadores #bonos table {
+      margin-top: -15px; }
+      #indicadores #bonos table tr:hover {
+        background: #0077c1;
+        color: #e6e6e6; }
+    #indicadores #bonos #overflow-bonos {
+      width: 101.6%;
+      height: 75%;
+      overflow-y: scroll;
+      padding-left: 0; }
+    #indicadores #bonos #tabla-bonos {
+      margin-top: 0; }
+      #indicadores #bonos #tabla-bonos tr:hover {
+        background: #e6e6e6;
+        color: #414a50; }
+  #indicadores table {
+    width: 100%;
+    text-align: left; }
+  #indicadores th {
+    font-weight: bold;
+    padding: 20px 0; }
+    #indicadores th:nth-child(1) {
+      padding-left: 5%; }
+  #indicadores td {
+    padding: 15px 0; }
+    #indicadores td:nth-child(1) {
+      padding-left: 5%; }
 
 #publicaciones {
   background: #414a50;
@@ -160,23 +287,334 @@ header {
   background: -ms-linear-gradient(top, #414a50 0%, #0077c1 100%);
   background: linear-gradient(to bottom, #414a50 0%, #0077c1 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414a50', endColorstr='#0077c1', GradientType=0 );
-  width: 60%;
-  height: 400px;
-  padding: 220px 20%;
+  height: 430px;
+  padding: 65px 20%;
   text-align: center; }
+  #publicaciones .home-item-post {
+    background: #e6e6e6;
+    min-height: 125px;
+    text-align: left;
+    padding: 15px 42px;
+    margin: 30px 0;
+    -webkit-box-shadow: 0px -4px 17px -4px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px -4px 17px -4px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px -4px 17px -4px rgba(0, 0, 0, 0.7); }
+    #publicaciones .home-item-post img {
+      border-radius: 50%; }
+    #publicaciones .home-item-post h1 {
+      font-size: 2rem;
+      color: #fa9c1f;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #414a50; }
+    #publicaciones .home-item-post p {
+      margin-bottom: 15px; }
+    #publicaciones .home-item-post p, #publicaciones .home-item-post a {
+      color: #414a50; }
 
 #videos {
-  width: 60%;
   padding: 20px 20%;
-  height: 600px; }
-  #videos p {
-    text-align: center; }
+  min-height: 630px;
+  text-align: center; }
+  #videos .home-item-post {
+    margin: 30px 3%;
+    width: 44%;
+    float: left; }
+  #videos .home-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0; }
+    #videos .home-video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+  #videos .fill {
+    height: 70px; }
 
 #portafolio {
-  width: 60%;
-  padding: 220px 20%;
-  height: 250px;
+  padding: 115px 20%;
   text-align: center;
   background: #ad5325; }
+  #portafolio .portafolio-home-item {
+    margin: 30px auto; }
+    #portafolio .portafolio-home-item table {
+      border: 1px #e6e6e6 solid;
+      width: 70%;
+      margin: auto; }
+      #portafolio .portafolio-home-item table td {
+        padding: 5px;
+        text-align: center; }
+
+/****** END FRONT PAGE *******/
+/****** PUBLICACIONES ********/
+h1.titulo-archivo {
+  margin: 0 20%;
+  padding: 30px 0;
+  color: #414a50;
+  font-size: 3rem;
+  border-bottom: solid 1px #414a50; }
+
+#content {
+  min-height: 400px;
+  width: 60%;
+  margin: auto;
+  color: #414a50;
+  padding: 30px 0; }
+  #content .archive-item {
+    margin-bottom: 20px; }
+  #content .item-wrapper {
+    padding: 15px 0; }
+  #content a {
+    text-decoration: none; }
+  #content h1 {
+    font-size: 2rem;
+    color: #fa9c1f;
+    margin: 10px 0;
+    font-weight: bold; }
+  #content h1.titulo-publicaciones:hover {
+    text-decoration: underline; }
+  #content h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #414a50;
+    text-align: left; }
+  #content p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    line-height: 1.4; }
+    #content p strong {
+      font-weight: 800; }
+
+/********** VIDEOS ***************/
+.video-item {
+  margin-bottom: 50px !important; }
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0; }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+/********** VIDEOS END ***********/
+/********** PORTAFOLIO ***********/
+.portafolio-archive-item {
+  height: 50px;
+  margin: auto; }
+  .portafolio-archive-item table {
+    border: 1px #414a50 solid;
+    width: 90%;
+    margin: auto; }
+    .portafolio-archive-item table td {
+      padding: 5px;
+      text-align: center;
+      color: #414a50; }
+      .portafolio-archive-item table td a {
+        color: #414a50; }
+    .portafolio-archive-item table tr:hover td {
+      color: #e6e6e6;
+      background: #414a50; }
+    .portafolio-archive-item table tr:hover a {
+      color: #e6e6e6;
+      background: #414a50; }
+      .portafolio-archive-item table tr:hover a:hover {
+        text-decoration: underline !important; }
+
+/********** PORTAFOLIO END *******/
+/********** REDES ****************/
+#redes {
+  margin: auto;
+  height: 1100px;
+  max-width: 990px; }
+  #redes div {
+    float: left;
+    width: 50%;
+    max-width: 580px; }
+  #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3, #redes .twitter-timeline {
+    width: 90% !important;
+    height: 400px !important;
+    margin: 5% !important;
+    margin-top: 0 !important; }
+
+/********** REDES END ************/
+@media (max-width: 1200px) {
+  body {
+    min-width: 770px; }
+
+  #header-home #imagenes-header {
+    background-position-y: 0 !important; }
+
+  #quienes-somos {
+    background: rgba(60, 60, 60, 0.8); }
+
+  #indicadores {
+    height: 1700px; }
+    #indicadores h3 {
+      margin: 10px auto; }
+    #indicadores #wrapper-indicadores {
+      height: 50%;
+      padding-left: 0; }
+    #indicadores div {
+      float: left;
+      width: 100%;
+      height: 850px; }
+    #indicadores #monedas {
+      height: 46%;
+      padding: 2%; }
+    #indicadores #commodities {
+      height: 46%;
+      padding: 2%; }
+    #indicadores #bonos {
+      height: 46%;
+      padding: 2%;
+      width: 96%; }
+
+  #publicaciones {
+    height: 580px !important; }
+
+  #videos .home-item-post {
+    margin: 20px 3%; }
+
+  #redes {
+    margin: auto;
+    height: 2200px; }
+    #redes div {
+      float: none;
+      width: 100%;
+      max-width: 100%; }
+    #redes iframe#twitter-widget-0, #redes iframe#twitter-widget-1, #redes iframe#twitter-widget-2, #redes iframe#twitter-widget-3, #redes .twitter-timeline {
+      width: 70% !important;
+      height: 400px !important;
+      margin: 15% !important;
+      margin-top: 0 !important;
+      margin-bottom: 10px !important;
+      min-height: 400px !important; } }
+@media (max-width: 950px) {
+  .menu {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0; }
+    .menu #menu-trigger {
+      display: block;
+      position: relative;
+      z-index: 1000;
+      height: 85px;
+      cursor: pointer; }
+      .menu #menu-trigger p {
+        color: #414a50;
+        float: right; }
+    .menu #menu-boton {
+      position: relative;
+      margin-top: 22px;
+      margin-left: 7px;
+      margin-right: 8%;
+      float: right; }
+    .menu .icon-bar {
+      position: absolute;
+      background: #414a50;
+      display: block;
+      width: 33px;
+      height: 3px;
+      border-radius: 1px;
+      top: 10px;
+      transition: ease all 0.5s; }
+    .menu .icon-bar:nth-child(2) {
+      top: 19px; }
+    .menu .icon-bar:nth-child(3) {
+      top: 28px; }
+    .menu ul {
+      position: relative;
+      display: block;
+      width: 100%;
+      background: #fafafa;
+      z-index: 800;
+      display: none; }
+      .menu ul li {
+        float: none;
+        text-align: center;
+        width: 100% !important; } }
+.rotate-r {
+  transform: rotate(45deg);
+  top: 19px !important; }
+
+.rotate-l {
+  transform: rotate(-45deg);
+  top: 19px !important; }
+
+@media (max-width: 770px) {
+  body {
+    min-width: 320px; }
+
+  header #logo-home .logo {
+    width: 100%;
+    height: 165px;
+    background-size: 90%; }
+  header #logo-home p {
+    padding: 0 5%; }
+
+  #indicadores #bonos table td:nth-child(3), #indicadores #bonos table th:nth-child(3) {
+    display: none; }
+  #indicadores #bonos table td:nth-child(4), #indicadores #bonos table th:nth-child(4) {
+    display: none; }
+  #indicadores #bonos table td:nth-child(5), #indicadores #bonos table th:nth-child(5) {
+    display: none; }
+
+  .home-item {
+    width: 90%; }
+
+  #publicaciones {
+    padding: 40px 5%;
+    height: 780px !important; }
+    #publicaciones img {
+      float: none;
+      display: inline-block;
+      margin: 30px auto; }
+    #publicaciones .home-item-post {
+      text-align: center; }
+
+  h1 {
+    font-size: 1.8rem !important; }
+
+  h2 {
+    font-size: 1.8rem !important; }
+
+  h3 {
+    font-size: 1.8rem !important; }
+
+  #videos {
+    padding: 20px 5%; }
+    #videos .home-item-post {
+      margin: 30px auto;
+      width: 60%;
+      float: none; }
+
+  #portafolio {
+    padding: 115px 5%; }
+
+  footer #logo-footer {
+    width: 100%;
+    background-size: 100%; }
+
+  .menu {
+    height: 55px !important; }
+    .menu #menu-trigger {
+      height: 55px; }
+      .menu #menu-trigger p {
+        height: 55px;
+        line-height: 55px; }
+    .menu #menu-boton {
+      margin-top: 7px;
+      margin-right: 55px;
+      margin-left: 10px; } }
 
 /*# sourceMappingURL=style.css.map */
